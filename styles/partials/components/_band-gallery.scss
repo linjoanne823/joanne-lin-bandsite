@@ -1,2 +1,18 @@
 @use '../variables';
 @use '../mixins' as *;
+
+
+.band-gallery{
+    background-color:#FAFAFA;
+    padding:16px;
+    &__title{
+        margin:0 auto;
+        font-family:'AvenirNext';
+        padding:0.2rem;
+        
+    }
+    &__wrapper{
+        
+
+    }
+}

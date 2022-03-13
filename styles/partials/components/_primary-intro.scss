@@ -1,0 +1,27 @@
+@use '../variables';
+@use '../mixins' as *;
+
+
+.primary-intro{
+    padding:16px;
+    font-family:'AvenirNext';
+    &__title{
+        font-size:24px;
+    }
+    &__image{
+        width:100%;
+
+    }
+    &__quote{
+        font-weight:700;
+    }
+    &__bio-container{
+
+    }
+    &__bio-title{
+        
+    }
+    &__bio-content{
+       
+    }
+}

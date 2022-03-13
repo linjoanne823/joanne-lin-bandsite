@@ -1,2 +1,52 @@
 @use '../variables';
 @use '../mixins' as *;
+
+
+.primary-footer{
+    background-color:variables.$primary-background;
+    color:variables.$primary-text;
+    font-family:'AvenirNext';
+    padding:16px;
+    &__title{
+        font-size:1.5rem;
+      
+    }
+    &__social-media-wrapper{
+        display:flex;
+        flex-direction:row;
+        padding-bottom:0.7rem;
+        
+    }
+    &__social-media-icon{
+        padding-right:1.5rem;
+
+    }
+    &__text-wrapper{
+     
+    }
+    &__text-card{
+    
+       display:flex;
+       flex-direction:column;
+       padding-bottom:1rem;
+       padding-top:1rem;
+   
+    
+        
+        &--bolded{
+            font-weight:700;
+            padding-bottom:1rem;
+            padding-top:1rem;
+            
+            
+        }
+    
+    }
+    &__text{
+        margin:0%;
+    }
+    &__copyright-name{
+        font-size:1.5rem;
+    }
+        
+}

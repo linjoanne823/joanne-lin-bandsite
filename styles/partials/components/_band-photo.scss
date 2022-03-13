@@ -1,2 +1,12 @@
 @use '../variables';
 @use '../mixins' as *;
+
+.band-photo{
+    &__card{
+        padding-top:8px;
+        padding-bottom:8px;
+    }
+    &__image{
+        width:100%;
+    }
+}
