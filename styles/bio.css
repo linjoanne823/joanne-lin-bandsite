@@ -21,19 +21,39 @@
 }
 .band-gallery {
   background-color: #FAFAFA;
-  padding: 16px;
 }
 .band-gallery__title {
+  padding: 16px;
   margin: 0 auto;
   font-family: "AvenirNext";
   padding: 0.2rem;
 }
+@media screen and (min-width: 768px) {
+  .band-gallery__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0;
+    padding-bottom: 36px;
+  }
+  .band-gallery__title {
+    font-size: 36px;
+    padding: 36px;
+  }
+}
+
 .band-photo__card {
   padding-top: 8px;
   padding-bottom: 8px;
+  width: 100%;
 }
 .band-photo__image {
   width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .band-photo__card {
+    width: 27%;
+  }
 }
 
 .primary-footer {
@@ -70,6 +90,37 @@
 .primary-footer__copyright-name {
   font-size: 1.5rem;
 }
+@media screen and (min-width: 768px) {
+  .primary-footer {
+    position: relative;
+    padding: 36px;
+  }
+  .primary-footer__title-and-social-media-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+  .primary-footer__social-media-wrapper {
+    padding: 2rem;
+  }
+  .primary-footer__title {
+    font-size: 36px;
+  }
+  .primary-footer__copyright-name {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+  }
+  .primary-footer__text-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .primary-footer__text-card-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
 
 .primary-header {
   background-color: #323232;
@@ -81,11 +132,15 @@
   text-align: center;
   padding: 0.5rem;
 }
-
 .primary-nav {
   background-color: #323232;
   color: #FFFFFF;
   font-family: "AvenirNext";
+}
+.primary-nav__title {
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 0.5rem;
 }
 .primary-nav__list {
   list-style: none;
@@ -99,12 +154,25 @@
   padding-right: 1.5rem;
 }
 .primary-nav__list-item--highlighted {
-  padding-left: 1.7rem;
-  padding-right: 1.7rem;
   padding-bottom: 0.5rem;
   border-bottom: 5px solid #ffffff;
 }
+@media screen and (min-width: 768px) {
+  .primary-nav {
+    display: flex;
+    flex-direction: row;
+    padding-left: 36px;
+    padding-right: 36px;
+    padding-top: 14px;
+  }
+  .primary-nav__list-container {
+    padding-left: 2rem;
+  }
+}
 
+.primary-hero {
+  font-family: "AvenirNext";
+}
 .primary-hero__container {
   display: flex;
   align-items: center;
@@ -115,11 +183,16 @@
 }
 .primary-hero__title {
   position: absolute;
-  font-family: "AvenirNext";
   font-weight: 700;
   color: #FFFFFF;
   font-size: 24px;
   padding: 16px;
+}
+@media screen and (min-width: 768px) {
+  .primary-hero__title {
+    font-size: 60px;
+    padding: 36px;
+  }
 }
 
 .primary-intro {
@@ -132,6 +205,40 @@
 .primary-intro__image {
   width: 100%;
 }
-.primary-intro__quote {
+.primary-intro__quote-container {
   font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  .primary-intro {
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+  .primary-intro__title {
+    font-size: 36px;
+  }
+  .primary-intro__image {
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .primary-intro__quote {
+    font-size: 24px;
+  }
+  .primary-intro__quote-credit {
+    font-size: 14px;
+  }
+  .primary-intro__bio-title {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .primary-intro__bio-paragraph-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+  .primary-intro__bio-paragraph {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin: 0;
+  }
 }/*# sourceMappingURL=bio.css.map */

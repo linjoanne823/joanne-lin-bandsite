@@ -4,15 +4,28 @@
 
 .band-gallery{
     background-color:#FAFAFA;
-    padding:16px;
+
     &__title{
+        padding:16px;
         margin:0 auto;
         font-family:'AvenirNext';
         padding:0.2rem;
         
     }
-    &__wrapper{
-        
+   @include tablet{
+       
+       &__wrapper{
+           display:flex;
+           flex-wrap:wrap;
+           justify-content:space-evenly;
+           margin:0;
+           padding-bottom:36px;
+       }
+       &__title{
+           font-size:36px;
+           padding:36px;
 
-    }
+       }
+    
+   }
 }

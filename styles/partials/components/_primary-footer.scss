@@ -21,9 +21,7 @@
         padding-right:1.5rem;
 
     }
-    &__text-wrapper{
-     
-    }
+    
     &__text-card{
     
        display:flex;
@@ -47,6 +45,41 @@
     }
     &__copyright-name{
         font-size:1.5rem;
+    }
+
+    @include tablet{
+        position:relative;
+        padding:36px;
+        &__title-and-social-media-wrapper{
+            display:flex;
+            flex-direction:row;
+           
+        }
+        &__social-media-wrapper{
+            padding:2rem;
+        }
+     
+       
+        
+        &__title{
+            font-size:36px;
+        }
+        &__copyright-name{
+            position:absolute;
+            top:30px;
+            right:20px;
+        }
+        &__text-wrapper{
+            display:flex;
+            flex-direction:row;
+            justify-content:space-evenly;
+        }
+        &__text-card-column{
+            display:flex;
+            flex-direction:column;
+            justify-content:space-evenly;
+            
+        }
     }
         
 }
