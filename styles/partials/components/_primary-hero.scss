@@ -31,5 +31,10 @@
         }
 
     }
+    @include desktop{
+        &__title{
+            padding:80px;
+        }
+    }
 
 }
