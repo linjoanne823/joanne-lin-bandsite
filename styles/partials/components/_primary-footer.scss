@@ -43,7 +43,7 @@
     &__text{
         margin:0%;
     }
-    &__copyright-name{
+    &__logo{
         font-size:1.5rem;
     }
 
@@ -64,10 +64,12 @@
         &__title{
             font-size:36px;
         }
-        &__copyright-name{
+        &__logo{
             position:absolute;
             top:30px;
             right:20px;
+            padding:20px;
+            font-size:20px;
         }
         &__text-wrapper{
             display:flex;
@@ -81,6 +83,12 @@
             
         }
     }
-    
+    @include desktop{
+        padding:80px;
+        &__logo{
+           padding:60px;
+
+        }
+    }
         
 }
