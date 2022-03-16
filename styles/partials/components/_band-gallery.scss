@@ -10,22 +10,32 @@
         margin:0 auto;
         font-family:'AvenirNext';
         padding:0.2rem;
+        font-weight:600;
         
     }
    @include tablet{
+       padding-left:36px;
+       padding-right:36px;
        
        &__wrapper{
            display:flex;
            flex-wrap:wrap;
            justify-content:space-evenly;
            margin:0;
-           padding-bottom:36px;
+         
        }
        &__title{
            font-size:36px;
-           padding:36px;
+           padding-top:48px;
+           padding-bottom:36px;
+          
+           
 
        }
     
+   }
+   @include desktop{
+       padding-left:80px;
+       padding-right:80px;
    }
 }

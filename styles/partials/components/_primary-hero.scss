@@ -14,10 +14,11 @@
     }
     &__image{
         width:100%;
+       
     }
     &__title{
         position:absolute;
-        font-weight:700;
+        font-weight:600;
         color: variables.$primary-text;
         font-size:24px;
         padding:16px;
@@ -25,9 +26,13 @@
     }
 
     @include tablet{
+        &__image{
+            padding-bottom:48px;
+        }
         &__title{
             font-size:60px;
             padding:36px;
+            
         }
 
     }

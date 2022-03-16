@@ -7,13 +7,15 @@
     font-family:'AvenirNext';
     &__title{
         font-size:24px;
+        font-weight:600;
+        
     }
     &__image{
         width:100%;
 
     }
     &__quote-container{
-        font-weight:700;
+        font-weight:600;
     }
     
     @include tablet{
@@ -21,13 +23,18 @@
         padding-right:36px;
         &__title{
             font-size:36px;
+            margin: 0;
+            
         }
         &__image{
             display:block;
             width:80%;
             margin-left:auto;
             margin-right:auto; 
+            padding-top:36px;
+            padding-bottom:36px;
         }
+
         &__quote{
             font-size:24px;
         }
@@ -54,4 +61,9 @@
         }
 
     }
-}
+    @include desktop{
+        padding-left:80px;
+        padding-right:80px;
+           
+        }
+    }

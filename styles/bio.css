@@ -1,7 +1,7 @@
 @font-face {
   font-family: "AvenirNext";
   src: url("../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff");
-  font-weight: 800;
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -15,7 +15,7 @@
 @font-face {
   font-family: "AvenirNext";
   src: url("../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff");
-  font-weight: 700;
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
@@ -27,18 +27,29 @@
   margin: 0 auto;
   font-family: "AvenirNext";
   padding: 0.2rem;
+  font-weight: 600;
 }
 @media screen and (min-width: 768px) {
+  .band-gallery {
+    padding-left: 36px;
+    padding-right: 36px;
+  }
   .band-gallery__wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin: 0;
-    padding-bottom: 36px;
   }
   .band-gallery__title {
     font-size: 36px;
-    padding: 36px;
+    padding-top: 48px;
+    padding-bottom: 36px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .band-gallery {
+    padding-left: 80px;
+    padding-right: 80px;
   }
 }
 
@@ -104,6 +115,8 @@
   }
   .primary-footer__title {
     font-size: 36px;
+    line-height: 44px;
+    font-weight: 600;
   }
   .primary-footer__logo {
     position: absolute;
@@ -162,6 +175,7 @@
 .primary-nav__list-item {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  color: #E1E1E1;
 }
 .primary-nav__list-item--highlighted {
   font-weight: bold;
@@ -202,12 +216,15 @@
 }
 .primary-hero__title {
   position: absolute;
-  font-weight: 700;
+  font-weight: 600;
   color: #FFFFFF;
   font-size: 24px;
   padding: 16px;
 }
 @media screen and (min-width: 768px) {
+  .primary-hero__image {
+    padding-bottom: 48px;
+  }
   .primary-hero__title {
     font-size: 60px;
     padding: 36px;
@@ -225,12 +242,13 @@
 }
 .primary-intro__title {
   font-size: 24px;
+  font-weight: 600;
 }
 .primary-intro__image {
   width: 100%;
 }
 .primary-intro__quote-container {
-  font-weight: 700;
+  font-weight: 600;
 }
 @media screen and (min-width: 768px) {
   .primary-intro {
@@ -239,12 +257,15 @@
   }
   .primary-intro__title {
     font-size: 36px;
+    margin: 0;
   }
   .primary-intro__image {
     display: block;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 36px;
+    padding-bottom: 36px;
   }
   .primary-intro__quote {
     font-size: 24px;
@@ -266,5 +287,11 @@
     margin: 0;
     line-height: 22px;
     font-size: 14px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .primary-intro {
+    padding-left: 80px;
+    padding-right: 80px;
   }
 }/*# sourceMappingURL=bio.css.map */
