@@ -5,12 +5,12 @@
     background-color: variables.$primary-background;
     color: variables.$primary-text;
     font-family: 'AvenirNext';
-    &__title{
-    font-size:20px;
-    text-align:center;
-    padding:1rem;
+    
+    &__logo-card{
+        padding:1rem;
+        text-align:center;
+    
     }
-   
 
     &__list{
         list-style:none;

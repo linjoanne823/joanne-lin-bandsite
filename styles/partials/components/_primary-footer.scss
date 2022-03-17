@@ -52,9 +52,7 @@
     &__text{
         margin:0%;
     }
-    &__logo-card{
-        font-size:1.5rem;
-    }
+   
 
     @include tablet{
         
@@ -92,18 +90,17 @@
             padding-bottom:36px;
         }
         &__logo-card{
+            
             position:absolute;
-            //display:flex;
-            //align-self:flex-end;
             top:30px;
             right:20px;
-            padding:20px;
-            font-size:20px;
-        }
+            padding:60px;
+            
+            }
+        
         &__text-wrapper{
             display:flex;
             flex-direction:row;
-            //justify-content:space-between;
         }
         &__text-card-column{
             display:flex;
@@ -113,17 +110,12 @@
             
         }
     }
+    
     @include desktop{
         &__outer-container{
             max-width:75rem;
             margin-left:auto;
-            margin-right:auto;
-            
+            margin-right:auto;   
         }
-        &__logo-card{
-           padding:60px;
-
-        }
-    }
-        
-}
+    } 
+}  

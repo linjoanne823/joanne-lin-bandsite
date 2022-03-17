@@ -32,7 +32,8 @@
        &__wrapper{
            display:flex;
            flex-wrap:wrap;
-           justify-content:space-evenly;
+           justify-content:space-around;
+           padding-bottom:36px;
           
          
        }
@@ -40,7 +41,7 @@
            font-size:36px;
            padding-top:48px;
            padding-bottom:36px;
-           padding-left:36px;
+           //padding-left:36px;
           
            
 
