@@ -38,11 +38,11 @@
    
     }
     @include tablet{
-        &__container{
+        &__outer-container{
         display:flex;
         flex-direction: row;
-        padding-left:36px;
-        padding-right:36px;
+        margin-left:36px;
+        margin-right:36px;
         padding-top:14px;
 
         }
@@ -55,11 +55,12 @@
        
     }
     @include desktop{
-       &__container{
+       &__outer-container{
            display:flex;
            justify-content:flex-start;
-           padding-left:80px;
-           padding-right:80px;
+           max-width:75rem;
+           margin-left:auto;
+           margin-right:auto;
        }
     }
     

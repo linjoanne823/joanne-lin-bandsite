@@ -14,7 +14,7 @@
     }
     &__image{
         width:100%;
-        
+
        
     }
     &__title{
@@ -30,17 +30,20 @@
         &__image{
             padding-bottom:48px;
         }
+        // &__title-container{
+        //     margin-left:36px;
+        //     margin-right:36px;
+        // }
         &__title{
             font-size:60px;
-            padding:36px;
+    
 
         }
 
     }
     @include desktop{
-        &__title{
-            padding:80px;
-        }
+        
+        
     }
 
 }
