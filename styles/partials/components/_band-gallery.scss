@@ -4,30 +4,43 @@
 
 .band-gallery{
     background-color:#FAFAFA;
+    width:100vw;
+    
+
+    &__outer-container{
+    margin-left:16px;
+    margin-right:16px;
+
+    }
 
     &__title{
-        padding:16px;
-        margin:0 auto;
+      
+      
         font-family:'AvenirNext';
-        padding:0.2rem;
+        //padding:0.2rem;
         font-weight:600;
         
     }
    @include tablet{
-       padding-left:36px;
-       padding-right:36px;
+       &__outer-container{
+        margin-left:36px;
+        margin-right:36px;
+
+       }
+       
        
        &__wrapper{
            display:flex;
            flex-wrap:wrap;
            justify-content:space-evenly;
-           margin:0;
+          
          
        }
        &__title{
            font-size:36px;
            padding-top:48px;
            padding-bottom:36px;
+           padding-left:36px;
           
            
 
@@ -35,7 +48,15 @@
     
    }
    @include desktop{
-       padding-left:80px;
-       padding-right:80px;
+       &__outer-container{
+           max-width:75rem;
+           margin-left:auto;
+           margin-right:auto;
+       }
+
+       
+      
+       
+      
    }
 }

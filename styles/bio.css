@@ -21,35 +21,38 @@
 }
 .band-gallery {
   background-color: #FAFAFA;
+  width: 100vw;
+}
+.band-gallery__outer-container {
+  margin-left: 16px;
+  margin-right: 16px;
 }
 .band-gallery__title {
-  padding: 16px;
-  margin: 0 auto;
   font-family: "AvenirNext";
-  padding: 0.2rem;
   font-weight: 600;
 }
 @media screen and (min-width: 768px) {
-  .band-gallery {
-    padding-left: 36px;
-    padding-right: 36px;
+  .band-gallery__outer-container {
+    margin-left: 36px;
+    margin-right: 36px;
   }
   .band-gallery__wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin: 0;
   }
   .band-gallery__title {
     font-size: 36px;
     padding-top: 48px;
     padding-bottom: 36px;
+    padding-left: 36px;
   }
 }
 @media screen and (min-width: 1280px) {
-  .band-gallery {
-    padding-left: 80px;
-    padding-right: 80px;
+  .band-gallery__outer-container {
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -71,7 +74,10 @@
   background-color: #323232;
   color: #FFFFFF;
   font-family: "AvenirNext";
-  padding: 16px;
+}
+.primary-footer__outer-container {
+  margin-left: 16px;
+  margin-right: 16px;
 }
 .primary-footer__title {
   font-size: 1.5rem;
@@ -83,6 +89,8 @@
 }
 .primary-footer__social-media-icon {
   padding-right: 1.5rem;
+  width: 30px;
+  height: 30px;
 }
 .primary-footer__text-card {
   display: flex;
@@ -98,13 +106,20 @@
 .primary-footer__text {
   margin: 0%;
 }
-.primary-footer__logo {
+.primary-footer__logo-card {
   font-size: 1.5rem;
 }
 @media screen and (min-width: 768px) {
-  .primary-footer {
+  .primary-footer__outer-container {
     position: relative;
-    padding: 36px;
+    margin-left: 36px;
+    margin-right: 36px;
+    padding-bottom: 36px;
+  }
+  .primary-footer__inner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
   .primary-footer__title-and-social-media-wrapper {
     display: flex;
@@ -112,13 +127,16 @@
   }
   .primary-footer__social-media-wrapper {
     padding: 2rem;
+    align-items: center;
   }
   .primary-footer__title {
     font-size: 36px;
     line-height: 44px;
     font-weight: 600;
+    padding-top: 48px;
+    padding-bottom: 36px;
   }
-  .primary-footer__logo {
+  .primary-footer__logo-card {
     position: absolute;
     top: 30px;
     right: 20px;
@@ -128,19 +146,21 @@
   .primary-footer__text-wrapper {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
   }
   .primary-footer__text-card-column {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    padding-right: 3rem;
   }
 }
 @media screen and (min-width: 1280px) {
-  .primary-footer {
-    padding: 80px;
+  .primary-footer__outer-container {
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .primary-footer__logo {
+  .primary-footer__logo-card {
     padding: 60px;
   }
 }
