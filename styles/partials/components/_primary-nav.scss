@@ -5,9 +5,14 @@
     background-color: variables.$primary-background;
     color: variables.$primary-text;
     font-family: 'AvenirNext';
+    &__outer-container{
+        display:flex;
+        flex-direction:column;
+    }
+
     
     &__logo-card{
-        padding:1rem;
+        padding:1.5rem 1rem 1.5rem 1rem;
         text-align:center;
     
     }
@@ -16,41 +21,74 @@
         list-style:none;
         display:flex;
         flex-direction:row;
-        justify-content:space-around;
+        justify-content:space-evenly;
         padding:0;
+        margin-bottom:0;
         
 
    
     }
+
+    &__list-item-container{
+        padding-left:20%;
+        padding-right:20%;
+        
+        
+       &--highlighted{
+        text-align:center;
+        padding-left:20%;
+        padding-right:20%;
+        border-bottom: 5px solid #ffffff;
+       }
+
+
+    }
     &__list-item{
        
-        padding-left:1.5rem;
-        padding-right:1.5rem;
+        // padding-left:1.5rem;
+        // padding-right:1.5rem;
         color:#E1E1E1;
 
        &--highlighted{
-          
-           font-weight:bold;
+        //    text-align:center;
+           font-weight:600;
            padding-bottom:0.5rem;
-           border-bottom: 5px solid #ffffff;
+           padding-left:15%;
+        //    border-bottom: 5px solid #ffffff;
          
        }
-   
+       
     }
+    
     @include tablet{
         &__outer-container{
         display:flex;
         flex-direction: row;
         margin-left:36px;
         margin-right:36px;
-        padding-top:14px;
+        // padding-top:14px;
 
         }
+        &__list{
+            justify-content:space-between;
+            // padding-bottom:0;
+        }
         
-
+    //    &__list-item-container{
+    //        padding:0%;
+    //        &--highlighted{
+    //            padding:0%;
+    //        }
+    //    }
        &__list-container{
-           padding-left:2rem;
+           padding:0.5rem 0.5rem 0rem 1rem;
            
+       }
+       &__list-item{
+           &--highlighted{
+               padding-left:0;
+               padding-bottom:30%;
+           }
        }
        
     }

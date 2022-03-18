@@ -23,6 +23,10 @@
     }
     &__quote-container{
         font-weight:600;
+        letter-spacing:1px;
+    }
+    &__bio-title{
+        font-weight:600;
     }
     
     @include tablet{
@@ -34,7 +38,7 @@
         &__title{
             padding-top:48px;
             font-size:36px;
-            margin: 0;
+            margin-left:36px;
             
         }
         &__image{

@@ -3,37 +3,40 @@
 
 .primary-hero{
     // position:relative;
-    
+    // width:50rem;
+    // height:20rem;
+    // width:100vw;
+  
     
     
     
      &__background-image{
-         background-image: url(../assets/images/hero-bio.jpg);
+     
+         background: linear-gradient(rgba(50, 50, 50, 0.5), 
+         rgba(50, 50, 50, 0.5)),url(../assets/images/hero-bio.jpg);
          background-size:cover;
          background-repeat:no-repeat;
-
+         
+         background-position-y:75%;
+         
+       
+         
+     }    
+        
         
      
-         
-        padding:100px;  
-         
-     }
-
-     &__color-overlay{
-         background-color:#323232;
-         opacity:0.8;
-        //  position:relative;
-         
-     }
     
     &__text-container{
         color:#FFFFFF;
 
         display:flex;
-        flex-direction:column;
-        align-items:flex-start;
-        right:220px;
-       
+        flex-direction:row;
+        // align-items:center;
+        // right:220px;
+        // margin:0;
+        padding-bottom:60px;
+        padding-top:60px;
+        padding-left:20px;
         
        
 
@@ -52,9 +55,28 @@
         font-weight:600;
         color: variables.$primary-text;
         font-size:24px;
+        width:200px;
+        // padding-right:500px;
+        // margin:0;
+        
       
       
 
+    }
+
+    @include midMobile{
+        &__text-container{
+            margin-left:28px;
+            margin-right:28px;
+            padding-top:100px;
+            padding-bottom:100px;
+            padding-left:2px;
+            
+        }
+        &__text{
+            font-size:40px;
+            width:400px;
+        }
     }
 
     @include tablet{
@@ -64,25 +86,33 @@
            
             margin-left:36px;
             margin-right:36px;
+            padding-top:130px;
+            padding-bottom:130px;
     
 
         }
         &__text{
             font-size:60px;
+            width:500px;
         }
 
     }
     @include desktop{
         &__text-container{
-            
-            // padding-left:50px;
+            max-width:30rem;
+            padding-left:50px;
             padding-right:700px;
             margin-left:auto;
             margin-right:auto;
-            max-width:30rem;
+            padding-top:200px;
+            padding-bottom:200px;
+            
             
 
            
+        }
+        &__text{
+            width:500px;
         }
         
     }
