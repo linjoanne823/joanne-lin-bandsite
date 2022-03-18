@@ -34,20 +34,24 @@
             margin-left:36px;
             margin-right:36px;
         }
-        
+        &__inner-container{
+            width:85%;
+            margin-left:auto;
+            margin-right:auto;
+        }
         &__title{
             padding-top:48px;
             font-size:36px;
-            margin-left:36px;
+            margin-top:0;
             
         }
         &__image{
             display:block;
-            width:80%;
+            width:85%;
             margin-left:auto;
             margin-right:auto; 
-            padding-top:36px;
-            padding-bottom:36px;
+            object-fit:cover;
+            height:300px;
         }
 
         &__quote{
@@ -59,7 +63,7 @@
         }
         &__bio-title{
             font-size:24px;
-            font-weight:700;
+            font-weight:600;
         }
         &__bio-paragraph-wrapper{
             display:flex;
@@ -68,13 +72,19 @@
         }
         &__bio-paragraph{
 
-            padding-left:0.5rem;
+            // padding-left:0.5rem;
             padding-right:0.5rem;
-            //margin:0;
+            margin: 0 0 14px 0;
             line-height:22px;
             font-size:14px;
         }
 
+    }
+    @include midTablet{
+        &__bio-paragraph{
+            padding-left:0.5rem;
+           
+        }
     }
     @include desktop{
         &__outer-container{

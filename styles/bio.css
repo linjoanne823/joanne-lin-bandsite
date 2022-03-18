@@ -39,7 +39,7 @@
   .band-gallery__wrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-bottom: 36px;
   }
   .band-gallery__title {
@@ -66,7 +66,10 @@
 }
 @media screen and (min-width: 768px) {
   .band-photo__card {
-    width: 27%;
+    width: 30%;
+  }
+  .band-photo__image {
+    padding: 0 0 5% 0;
   }
 }
 
@@ -269,6 +272,7 @@
   .primary-hero__text {
     font-size: 60px;
     width: 500px;
+    padding-left: 10px;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -312,18 +316,24 @@
     margin-left: 36px;
     margin-right: 36px;
   }
+  .primary-intro__inner-container {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .primary-intro__title {
     padding-top: 48px;
     font-size: 36px;
-    margin-left: 36px;
+    margin-top: 0;
   }
   .primary-intro__image {
     display: block;
-    width: 80%;
+    width: 85%;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 36px;
-    padding-bottom: 36px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 300px;
   }
   .primary-intro__quote {
     font-size: 24px;
@@ -333,17 +343,22 @@
   }
   .primary-intro__bio-title {
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 600;
   }
   .primary-intro__bio-paragraph-wrapper {
     display: flex;
     flex-direction: row;
   }
   .primary-intro__bio-paragraph {
-    padding-left: 0.5rem;
     padding-right: 0.5rem;
+    margin: 0 0 14px 0;
     line-height: 22px;
     font-size: 14px;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .primary-intro__bio-paragraph {
+    padding-left: 0.5rem;
   }
 }
 @media screen and (min-width: 1280px) {

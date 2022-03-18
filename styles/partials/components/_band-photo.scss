@@ -12,8 +12,10 @@
     }
     @include tablet{
         &__card{
-            width:27%;
-            
+            width:30%;  
+        }
+        &__image{
+            padding: 0 0 5% 0;
         }
     }
 }
