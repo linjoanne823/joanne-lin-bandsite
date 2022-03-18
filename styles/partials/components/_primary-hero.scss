@@ -2,47 +2,82 @@
 @use '../mixins' as *;
 
 .primary-hero{
-    font-family:'AvenirNext';
+    // position:relative;
+    
+    
+    
+    
+     &__background-image{
+         background-image: url(../assets/images/hero-bio.jpg);
+         background-size:cover;
+         background-repeat:no-repeat;
 
-    &__container{
+        
+     
+         
+        padding:100px;  
+         
+     }
+
+     &__color-overlay{
+         background-color:#323232;
+         opacity:0.7;
+        //  position:relative;
+         
+     }
+    
+    &__text-container{
+        // position:absolute;
+
         display:flex;
-        align-items:center;
-        position:relative;
-
+        flex-direction:column;
+        align-items:flex-start;
+        right:220px;
+        
        
+
+        
+        
+        
+        
         
     }
-    &__image{
-        width:100%;
-
+    
+    &__text{
+        // position:absolute;
+        // z-index:2;
        
-    }
-    &__title{
-        position:absolute;
+        font-family:'AvenirNext';
         font-weight:600;
         color: variables.$primary-text;
         font-size:24px;
-        padding:16px;
+      
+      
 
     }
 
     @include tablet{
-        &__image{
-            padding-bottom:48px;
-        }
-        // &__title-container{
-        //     margin-left:36px;
-        //     margin-right:36px;
-        // }
-        &__title{
+       
+        
+        &__text{
             font-size:60px;
+            margin-left:36px;
+            margin-right:36px;
     
 
         }
 
     }
     @include desktop{
-        
+        &__text{
+            padding-left:50px;
+            padding-right:50px;
+            max-width:60rem;
+
+            
+
+           
+        }
         
     }
 
