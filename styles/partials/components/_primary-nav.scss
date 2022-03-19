@@ -19,7 +19,7 @@
         list-style:none;
         display:flex;
         flex-direction:row;
-        justify-content:space-evenly;
+        justify-content:space-between;
         padding:0;
         margin-bottom:0;
     }
@@ -29,7 +29,7 @@
    
        &--highlighted{
             text-align:center;
-            padding: 0 15%;
+            width:100%;
             border-bottom: 5px solid #ffffff;
        }
     }
