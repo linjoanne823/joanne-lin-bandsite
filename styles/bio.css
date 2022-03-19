@@ -145,7 +145,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    padding-right: 3rem;
+    padding-right: 1rem;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -153,6 +153,9 @@
     max-width: 75rem;
     margin-left: auto;
     margin-right: auto;
+  }
+  .primary-footer__text-card-column {
+    padding-right: 2rem;
   }
 }
 
@@ -166,7 +169,7 @@
   flex-direction: column;
 }
 .primary-nav__logo-card {
-  padding: 1.5rem 1rem;
+  padding: 1rem 1rem 0;
   text-align: center;
 }
 .primary-nav__list {
@@ -182,7 +185,7 @@
 }
 .primary-nav__list-item-container--highlighted {
   text-align: center;
-  padding: 0 20%;
+  padding: 0 15%;
   border-bottom: 5px solid #ffffff;
 }
 .primary-nav__list-item {
@@ -193,6 +196,9 @@
   padding: 0 0 1rem 1rem;
 }
 @media screen and (min-width: 768px) {
+  .primary-nav__logo-card {
+    padding: 1.5rem 1rem 0;
+  }
   .primary-nav__outer-container {
     display: flex;
     flex-direction: row;
@@ -227,7 +233,7 @@
   color: #FFFFFF;
   display: flex;
   flex-direction: row;
-  padding: 3.75rem 0 3.75rem 1.25rem;
+  padding: 4rem 0 3.75rem 1.25rem;
 }
 .primary-hero__text {
   font-family: "AvenirNext";
@@ -280,6 +286,11 @@
 }
 .primary-intro__image {
   width: 100%;
+  height: 11rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 70% 100%;
+     object-position: 70% 100%;
 }
 .primary-intro__quote-container {
   font-weight: 600;
@@ -288,12 +299,17 @@
 .primary-intro__bio-title {
   font-weight: 600;
 }
+@media screen and (min-width: 545px) {
+  .primary-intro__image {
+    height: 15rem;
+  }
+}
 @media screen and (min-width: 768px) {
   .primary-intro__outer-container {
     margin: 0 2.25rem;
   }
   .primary-intro__inner-container {
-    width: 85%;
+    max-width: 85%;
     margin: 0 auto;
   }
   .primary-intro__title {
@@ -303,11 +319,12 @@
   }
   .primary-intro__image {
     display: block;
-    width: 85%;
-    margin: 0 auto;
+    margin: 0;
     -o-object-fit: cover;
        object-fit: cover;
-    height: 18.75rem;
+    height: 20rem;
+    -o-object-position: center 70%;
+       object-position: center 70%;
   }
   .primary-intro__quote {
     font-size: 1.5rem;
@@ -339,5 +356,11 @@
   .primary-intro__outer-container {
     max-width: 75rem;
     margin: 0 auto;
+  }
+  .primary-intro__image {
+    height: 32rem;
+  }
+  .primary-intro__quote-container {
+    max-width: 50rem;
   }
 }/*# sourceMappingURL=bio.css.map */

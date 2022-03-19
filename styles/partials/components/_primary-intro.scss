@@ -16,6 +16,9 @@
 
     &__image{
         width:100%;
+        height:11rem;
+        object-fit:cover;
+        object-position:70% 100%;
     }
 
     &__quote-container{
@@ -26,14 +29,18 @@
     &__bio-title{
         font-weight:600;
     }
-    
+    @include midMobile{
+        &__image{
+            height:15rem;
+        }
+    }
     @include tablet{
         &__outer-container{
             margin: 0 2.25rem;
         }
 
         &__inner-container{
-            width:85%;
+            max-width:85%;
             margin: 0 auto;
         }
 
@@ -45,10 +52,11 @@
 
         &__image{
             display:block;
-            width:85%;
-            margin: 0 auto;
+            // width:85%;
+            margin: 0;
             object-fit:cover;
-            height: 18.75rem;
+            height: 20rem;
+            object-position: center 70%;
         }
 
         &__quote{
@@ -86,6 +94,12 @@
         &__outer-container{
             max-width:75rem;
             margin: 0 auto;
+        }
+        &__image{
+            height: 32rem;
+        }
+        &__quote-container{
+            max-width:50rem;
         }
     }
 }
