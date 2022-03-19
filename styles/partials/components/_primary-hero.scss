@@ -2,23 +2,24 @@
 @use '../mixins' as *;
 
 .primary-hero{
+    
      &__background-image{
          background: linear-gradient(rgba(50, 50, 50, 0.5), 
          rgba(50, 50, 50, 0.5)),url(../assets/images/hero-bio.jpg);
          background-size:cover;
          background-repeat:no-repeat;
-         background-position-y:75%;
+         background-position-y:30%;
      }    
         
     &__text-container{
         color:#FFFFFF;
         display:flex;
-        flex-direction:row;
+        flex-direction:column;
+        align-items:flex-start;
         padding: 4rem 0 3.75rem 1.25rem;   
     }
     
     &__text{
-        font-family:'AvenirNext';
         font-weight:600;
         color: variables.$primary-text;
         font-size:1.5rem;
@@ -53,7 +54,7 @@
     @include desktop{
         &__text-container{
             max-width:30rem;
-            padding:12.5rem 43.75rem 12.5rem 3.125rem;
+            padding:13rem 43rem 15rem 8rem;
             margin: 0 auto;  
         }
 

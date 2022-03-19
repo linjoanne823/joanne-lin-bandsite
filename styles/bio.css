@@ -27,7 +27,6 @@
   margin: 0 1rem;
 }
 .band-gallery__title {
-  font-family: "AvenirNext";
   font-weight: 600;
   padding: 1.5rem 0 0rem 0;
 }
@@ -48,7 +47,7 @@
 }
 @media screen and (min-width: 1280px) {
   .band-gallery__outer-container {
-    max-width: 75rem;
+    max-width: 65rem;
     margin: 0 auto;
   }
 }
@@ -71,7 +70,6 @@
 .primary-footer {
   background-color: #323232;
   color: #FFFFFF;
-  font-family: "AvenirNext";
 }
 .primary-footer__outer-container {
   margin: 0 1rem;
@@ -103,6 +101,7 @@
 }
 .primary-footer__text {
   margin: 0%;
+  width: 13.75rem;
 }
 .primary-footer__logo-card {
   padding: 2.5rem 0.625rem 0 0;
@@ -150,9 +149,8 @@
 }
 @media screen and (min-width: 1280px) {
   .primary-footer__outer-container {
-    max-width: 75rem;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 65rem;
+    margin: 0 auto;
   }
   .primary-footer__text-card-column {
     padding-right: 2rem;
@@ -162,7 +160,6 @@
 .primary-nav {
   background-color: #323232;
   color: #FFFFFF;
-  font-family: "AvenirNext";
 }
 .primary-nav__outer-container {
   display: flex;
@@ -218,7 +215,7 @@
   .primary-nav__outer-container {
     display: flex;
     justify-content: flex-start;
-    max-width: 75rem;
+    max-width: 65rem;
     margin: 0 auto;
   }
 }
@@ -227,16 +224,16 @@
   background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-bio.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position-y: 75%;
+  background-position-y: 30%;
 }
 .primary-hero__text-container {
   color: #FFFFFF;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: flex-start;
   padding: 4rem 0 3.75rem 1.25rem;
 }
 .primary-hero__text {
-  font-family: "AvenirNext";
   font-weight: 600;
   color: #FFFFFF;
   font-size: 1.5rem;
@@ -266,7 +263,7 @@
 @media screen and (min-width: 1280px) {
   .primary-hero__text-container {
     max-width: 30rem;
-    padding: 12.5rem 43.75rem 12.5rem 3.125rem;
+    padding: 13rem 43rem 15rem 8rem;
     margin: 0 auto;
   }
   .primary-hero__text {
@@ -274,9 +271,6 @@
   }
 }
 
-.primary-intro {
-  font-family: "AvenirNext";
-}
 .primary-intro__outer-container {
   margin: 0 1rem;
 }
@@ -362,10 +356,21 @@
     max-width: 75rem;
     margin: 0 auto;
   }
+  .primary-intro__inner-container {
+    max-width: 55rem;
+  }
+  .primary-intro__title {
+    margin: 0 0 2rem 5rem;
+  }
   .primary-intro__image {
     height: 32rem;
   }
   .primary-intro__quote-container {
     max-width: 50rem;
   }
+}
+
+body {
+  font-family: "AvenirNext";
+  margin: 0;
 }/*# sourceMappingURL=bio.css.map */

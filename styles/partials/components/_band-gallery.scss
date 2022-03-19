@@ -2,7 +2,7 @@
 @use '../mixins' as *;
 
 .band-gallery{
-    background-color:#FAFAFA;
+    background-color:variables.$alt-background;
     width:100vw;
 
     &__outer-container{
@@ -10,7 +10,6 @@
     }
 
     &__title{
-        font-family:'AvenirNext';
         font-weight:600;
         padding: 1.5rem 0 0rem 0;
     }
@@ -34,8 +33,9 @@
    }
 
    @include desktop{
+       
        &__outer-container{
-           max-width:75rem;
+           max-width:65rem;
            margin:0 auto;
        }  
    }

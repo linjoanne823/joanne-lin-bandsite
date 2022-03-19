@@ -3,8 +3,7 @@
 
 
 .primary-intro{
-
-    font-family:'AvenirNext';
+    
     &__outer-container{
     margin: 0 1rem;
     }
@@ -100,6 +99,12 @@
         &__outer-container{
             max-width:75rem;
             margin: 0 auto;
+        }
+        &__inner-container{
+            max-width:55rem;
+        }
+        &__title{
+            margin: 0 0 2rem 5rem;
         }
         &__image{
             height: 32rem;

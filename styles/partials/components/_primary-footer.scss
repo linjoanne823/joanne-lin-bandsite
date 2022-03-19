@@ -5,7 +5,7 @@
 .primary-footer{
     background-color:variables.$primary-background;
     color:variables.$primary-text;
-    font-family:'AvenirNext';
+    
     &__outer-container{
         margin:0 1rem;
         padding-bottom:1rem;
@@ -42,6 +42,7 @@
 
     &__text{
         margin:0%;
+        width:13.75rem;
     }
    
     &__logo-card{
@@ -100,10 +101,10 @@
     
     @include desktop{
         &__outer-container{
-            max-width:75rem;
-            margin-left:auto;
-            margin-right:auto;   
+            max-width:65rem;
+            margin: 0 auto;
         }
+
         &__text-card-column{
             padding-right:2rem;
         }
