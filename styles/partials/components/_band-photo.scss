@@ -3,13 +3,12 @@
 
 .band-photo{
     &__card{
-        padding-top:8px;
-        padding-bottom:8px;
-        width:100%;
+        padding: 0.5rem 0;
     }
     &__image{
-        width:100%;
+         width:100%;
     }
+
     @include tablet{
         &__card{
             width:30%;  

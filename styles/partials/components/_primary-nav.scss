@@ -10,11 +10,9 @@
         flex-direction:column;
     }
 
-    
     &__logo-card{
-        padding:1.5rem 1rem 1.5rem 1rem;
+        padding:1.5rem 1rem;
         text-align:center;
-    
     }
 
     &__list{
@@ -24,82 +22,55 @@
         justify-content:space-evenly;
         padding:0;
         margin-bottom:0;
-        
-
-   
     }
 
     &__list-item-container{
-        padding-left:20%;
-        padding-right:20%;
-        
-        
+        padding: 0 20%;
+   
        &--highlighted{
-        text-align:center;
-        padding-left:20%;
-        padding-right:20%;
-        border-bottom: 5px solid #ffffff;
+            text-align:center;
+            padding: 0 20%;
+            border-bottom: 5px solid #ffffff;
        }
-
-
     }
+
     &__list-item{
-       
-        // padding-left:1.5rem;
-        // padding-right:1.5rem;
         color:#E1E1E1;
 
        &--highlighted{
-        //    text-align:center;
            font-weight:600;
-           padding-bottom:0.5rem;
-           padding-left:15%;
-        //    border-bottom: 5px solid #ffffff;
-         
+           padding:0 0 1rem 1rem;
        }
-       
     }
     
     @include tablet{
         &__outer-container{
-        display:flex;
-        flex-direction: row;
-        margin-left:36px;
-        margin-right:36px;
-        // padding-top:14px;
-
+            display:flex;
+            flex-direction: row;
+            margin: 0 2.25rem;
         }
+
         &__list{
             justify-content:space-between;
-            // padding-bottom:0;
         }
         
-    //    &__list-item-container{
-    //        padding:0%;
-    //        &--highlighted{
-    //            padding:0%;
-    //        }
-    //    }
        &__list-container{
            padding:0.5rem 0.5rem 0rem 1rem;
-           
        }
+
        &__list-item{
            &--highlighted{
-               padding-left:0;
-               padding-bottom:30%;
+               padding:0 0 1.5rem 0;
            }
        }
-       
     }
+
     @include desktop{
        &__outer-container{
            display:flex;
            justify-content:flex-start;
            max-width:75rem;
-           margin-left:auto;
-           margin-right:auto;
+           margin: 0 auto;
        }
-    }
-    
+    } 
 }
