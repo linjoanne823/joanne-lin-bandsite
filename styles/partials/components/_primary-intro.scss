@@ -23,10 +23,14 @@
 
     &__quote-container{
         font-weight:600;
+        
     }
 
     &__bio-title{
         font-weight:600;
+    }
+    &__bio-paragraph{
+        line-height:1.5rem;
     }
     @include midMobile{
         &__image{
