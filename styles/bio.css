@@ -294,7 +294,6 @@
 }
 .primary-intro__quote-container {
   font-weight: 600;
-  letter-spacing: 1px;
 }
 .primary-intro__bio-title {
   font-weight: 600;
@@ -350,6 +349,9 @@
 @media screen and (min-width: 1080px) {
   .primary-intro__bio-paragraph {
     padding-left: 0.5rem;
+  }
+  .primary-intro__image {
+    height: 25rem;
   }
 }
 @media screen and (min-width: 1280px) {

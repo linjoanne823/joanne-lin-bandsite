@@ -23,7 +23,6 @@
 
     &__quote-container{
         font-weight:600;
-        letter-spacing:1px;
     }
 
     &__bio-title{
@@ -87,6 +86,9 @@
     @include midTablet{
         &__bio-paragraph{
             padding-left:0.5rem;   
+        }
+        &__image{
+            height:25rem;
         }
     }
 
