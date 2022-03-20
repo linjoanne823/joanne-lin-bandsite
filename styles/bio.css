@@ -106,6 +106,9 @@
 .primary-footer__logo-card {
   padding: 2.5rem 0.625rem 0 0;
 }
+.primary-footer__copyright-details {
+  font-size: 0.8125rem;
+}
 @media screen and (min-width: 768px) {
   .primary-footer__outer-container {
     position: relative;
@@ -366,7 +369,7 @@
     height: 32rem;
   }
   .primary-intro__quote-container {
-    max-width: 50rem;
+    max-width: 45rem;
   }
 }
 

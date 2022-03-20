@@ -55,7 +55,6 @@
 
         &__image{
             display:block;
-            // width:85%;
             margin: 0;
             object-fit:cover;
             height: 20rem;
@@ -111,7 +110,7 @@
             height: 32rem;
         }
         &__quote-container{
-            max-width:50rem;
+            max-width:45rem;
         }
     }
 }

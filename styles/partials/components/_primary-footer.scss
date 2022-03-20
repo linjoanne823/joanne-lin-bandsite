@@ -49,6 +49,10 @@
         padding:2.5rem 0.625rem 0 0;
     }
 
+    &__copyright-details{
+        font-size:0.8125rem;
+    }
+
     @include tablet{
         &__outer-container{
             position:relative;
