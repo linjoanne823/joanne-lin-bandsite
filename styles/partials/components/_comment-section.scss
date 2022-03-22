@@ -1,0 +1,63 @@
+@use '../variables';
+@use '../mixins' as *;
+
+.comment-section{
+    margin:0 1rem;
+    &__title{
+        font-weight:600;
+    }
+    &__inner-container{
+        display:flex;
+        flex-direction:row;
+    }
+    &__avatar-container{
+        padding:3rem 1rem 1rem 1rem;
+        display:flex;
+        flex-direction:column;
+        
+    }
+    &__avatar{
+        width:36px;
+        height:36px;
+        border-radius:50%;
+        border:1px solid black;
+        
+        
+    }
+    &__field-name{
+        color:variables.$secondary-text;
+    }
+    &__field {
+    width:100%;
+    height:36px;
+    border-radius: 4px;
+    padding:5px;
+    border:1px solid #E1E1E1
+    }
+}
+    
+ ul{
+     list-style:none;
+     
+ }   
+
+ span{
+     padding:6px;
+ }
+
+ li{
+     padding:20px 0;
+ }
+
+ #previous-comments{
+     padding:0;
+ }
+
+ button{
+     background-color: variables.$primary-background;
+     color:variables.$primary-text;
+     height:40px;
+     width:100%;
+     border-radius:4px;
+ }
+

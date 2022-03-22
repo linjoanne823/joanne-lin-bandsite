@@ -102,6 +102,40 @@
             </div>
 
         </section>
+        <!--comment section-->
+        <section class ="comment-section">
+            <form id="itemForm">
+                <h2 class ="comment-section__title">Join the Conversation</h2>
+                <div class="comment-section__inner-container">
+                    <div class ="comment-section__avatar-container">
+                        <img src="./assets/images/Mohan-muruge.jpg" class="comment-section__avatar" alt = "Mohan Muruge"/>
+                    </div>
+                    <div class="comment-section__input-container">
+                        <p class="comment-section__field-name">NAME</p>
+                        <input type="text" class="comment-section__field"name="nameInput" placeholder="Enter your name" />
+                        <p class ="comment-section__field-name">COMMENT</p>
+                        <input type="text" class ="comment-section__field"name="commentInput" placeholder="Add a new comment"/>
+                        <button type="submit">COMMENT</button>
+                    </div>
+                </div>
+              </form>
+              
+              <!-- dynamic content will be appended to the <ul> -->
+              <ul id="comments-list"></ul>
+              <div class="comment-section__inner-container">
+                <div class="comment-section__avatar-container">
+                    <span class="comment-section__avatar"></span>
+                    <span class="comment-section__avatar"></span>
+                    <span class="comment-section__avatar"></span>
+                </div>
+                <div class="comment-section__input-container">
+                    <ul id = "previous-comments"></ul>
+                </div>
+              </div>
+                
+        
+
+        </section>
     </main>
     <footer class="primary-footer">
         <div class="primary-footer__outer-container">
@@ -166,5 +200,6 @@
             </div>
         </div>
     </footer>
+    <script src="./scripts/index.page.js"></script>
 </body>
 </html>
