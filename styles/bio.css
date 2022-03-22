@@ -392,7 +392,8 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid #E1E1E1;
+  background-color: #E1E1E1;
 }
 .comment-section__field-name {
   color: #AFAFAF;
@@ -404,17 +405,29 @@
   padding: 5px;
   border: 1px solid #E1E1E1;
 }
+.comment-section__name {
+  font-weight: 600;
+  padding-right: 1rem;
+}
+.comment-section__timestamp {
+  color: #E1E1E1;
+  padding: 0 2rem;
+}
+.comment-section__comment {
+  padding: 1rem 0;
+}
+.comment-section__divider {
+  width: 100%;
+  border: 1px solid #E1E1E1;
+}
 
-ul {
+#comments-list {
   list-style: none;
+  padding: 0;
 }
 
 span {
   padding: 6px;
-}
-
-li {
-  padding: 20px 0;
 }
 
 #previous-comments {

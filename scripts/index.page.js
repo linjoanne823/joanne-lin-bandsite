@@ -1,7 +1,7 @@
 const itemForm = document.getElementById('itemForm');
 const dynamicContent = document.getElementById('comments-list');
 
-itemForm.addEventListener('submit', function (event) {
+itemForm.addEventListener('submit', function (event){
   event.preventDefault();
   const nameInputVal = event.target.nameInput.value; // nameInput matches form input value of the name attr
   const commentInputVal=event.target.commentInput.value;
@@ -14,8 +14,7 @@ itemForm.addEventListener('submit', function (event) {
   dynamicContent.appendChild(nameListElement);
   dynamicContent.appendChild(commentListElement);
 
-  //clears input field 
-    itemForm.reset();
+
 });
 
 
@@ -41,28 +40,55 @@ let comments = [
 
 
 let displayComment = ()=>{
-    let unorderedList = document.querySelector('#previous-comments');
+    let unorderedList = document.querySelector('#comments-list');
     for (let i=0;i<comments.length;i++){
         let commentObject = comments[i];
-        
-
-
+        let dividerNode = document.createElement('div');
+        dividerNode.classList.add("comment-section__divider");
+        let innerContainerNode = document.createElement('div');
+        innerContainerNode.classList.add("comment-section__inner-container");
+        let avatarContainerNode = document.createElement('div');
+        avatarContainerNode.classList.add("comment-section__avatar-container");
+        let avatarNode = document.createElement('div');
+        avatarNode.classList.add("comment-section__avatar");
+        let inputContainerNode = document.createElement('div');
+        inputContainerNode.classList.add("comment-section__input-container");
         let nameNode = document.createElement ('span');
+        nameNode.classList.add("comment-section__name");
         let timeStampNode = document.createElement ('span');
+        timeStampNode.classList.add("comment-section__timestamp");
         let commentNode = document.createElement('li');
+        commentNode.classList.add("comment-section__comment");
 
         nameNode.innerText = commentObject.name;
         timeStampNode.innerText = commentObject.timeStamp;
         commentNode.innerText = commentObject.comment;
 
         
-        
-        unorderedList.appendChild(nameNode);
-        unorderedList.appendChild(timeStampNode);
-        unorderedList.appendChild(commentNode);
-    
 
 
+      
+        // innerContainerNode.innerHTML = avatarContainerNode + inputContainerNode;
+        // unorderedList.appendChild(innerContainerNode);
+       
+        avatarContainerNode.innerHTML = avatarNode.outerHTML;
+        // unorderedList.appendChild(avatarContainerNode);
+
+       
+        inputContainerNode.innerHTML = nameNode.outerHTML + timeStampNode.outerHTML + commentNode.outerHTML;
+        innerContainerNode.innerHTML= avatarContainerNode.outerHTML + inputContainerNode.outerHTML;
+        unorderedList.appendChild(innerContainerNode);
+
+        // unorderedList.appendChild(inputContainerNode);
+        // unorderedList.appendChild(avatarNode);
+        // comment-section__avatar-container.innerHTML = '<div class = "comment-section__avatar"></div>'
+      
+        // unorderedList.appendChild(nameNode);
+       
+        // unorderedList.appendChild(timeStampNode);
+        // unorderedList.appendChild(commentNode);
+        unorderedList.appendChild(dividerNode);
+  
 
     
     }

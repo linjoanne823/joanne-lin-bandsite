@@ -20,7 +20,8 @@
         width:36px;
         height:36px;
         border-radius:50%;
-        border:1px solid black;
+        border:1px solid #E1E1E1;
+        background-color:#E1E1E1;
         
         
     }
@@ -34,10 +35,33 @@
     padding:5px;
     border:1px solid #E1E1E1
     }
+
+    &__name{
+        font-weight:600;
+        padding-right:1rem;
+    }
+
+    &__timestamp{
+        color:#E1E1E1;
+        padding:0 2rem;
+    }
+
+    &__comment{
+        padding: 1rem 0;
+    }
+
+    &__divider{
+        width:100%;
+        border: 1px solid #E1E1E1;
+    }
+
+
 }
     
- ul{
+
+ #comments-list{
      list-style:none;
+     padding:0;
      
  }   
 
@@ -45,9 +69,7 @@
      padding:6px;
  }
 
- li{
-     padding:20px 0;
- }
+ 
 
  #previous-comments{
      padding:0;
