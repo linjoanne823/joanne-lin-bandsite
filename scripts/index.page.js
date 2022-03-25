@@ -1,23 +1,6 @@
 const itemForm = document.getElementById('itemForm');
 const dynamicContent = document.getElementById('comments-list');
 
-itemForm.addEventListener('submit', function (event){
-  event.preventDefault();
-  const nameInputVal = event.target.nameInput.value; // nameInput matches form input value of the name attr
-  const commentInputVal=event.target.commentInput.value;
-  
-  const nameListElement = document.createElement('li');
-  const commentListElement= document.createElement('li');
-  nameListElement.innerText = nameInputVal;
-  commentListElement.innerText = commentInputVal;
-  
-  dynamicContent.appendChild(nameListElement);
-  dynamicContent.appendChild(commentListElement);
-
-
-});
-
-
 let comments = [
     {
         name: 'Connor Walton',
@@ -37,12 +20,45 @@ let comments = [
 
 ];
 
+itemForm.addEventListener('submit', function (event){
+  event.preventDefault();
+  const nameInputVal = event.target.nameInput.value; // nameInput matches form input value of the name attr
+  const commentInputVal=event.target.commentInput.value;
+  
+//   const nameListElement = document.createElement('li');
+//   const commentListElement= document.createElement('li');
+//   nameListElement.innerText = nameInputVal;
+//   commentListElement.innerText = commentInputVal;
+  
+  dynamicContent.appendChild(nameListElement);
+  dynamicContent.appendChild(commentListElement);
+
+  let newCommentObject = {
+      name:nameInputVal,
+      timeStamp: new Date(),
+      comment:commentInputVal,
+  }
+  
+  comments.push(newCommentObject);
+  let unorderedList = document.querySelector('#comments-list');
+  addComment(newCommentObject, unorderedList);
 
 
-let displayComment = ()=>{
-    let unorderedList = document.querySelector('#comments-list');
-    for (let i=0;i<comments.length;i++){
-        let commentObject = comments[i];
+
+  
+});
+
+
+
+
+
+
+
+
+
+
+let addComment=(commentObject, unorderedList)=>{
+    
         let dividerNode = document.createElement('div');
         dividerNode.classList.add("comment-section__divider");
         let innerContainerNode = document.createElement('div');
@@ -68,33 +84,36 @@ let displayComment = ()=>{
 
 
       
-        // innerContainerNode.innerHTML = avatarContainerNode + inputContainerNode;
-        // unorderedList.appendChild(innerContainerNode);
-       
+
         avatarContainerNode.innerHTML = avatarNode.outerHTML;
-        // unorderedList.appendChild(avatarContainerNode);
 
        
         inputContainerNode.innerHTML = nameNode.outerHTML + timeStampNode.outerHTML + commentNode.outerHTML;
         innerContainerNode.innerHTML= avatarContainerNode.outerHTML + inputContainerNode.outerHTML;
         unorderedList.appendChild(innerContainerNode);
 
-        // unorderedList.appendChild(inputContainerNode);
-        // unorderedList.appendChild(avatarNode);
-        // comment-section__avatar-container.innerHTML = '<div class = "comment-section__avatar"></div>'
-      
-        // unorderedList.appendChild(nameNode);
-       
-        // unorderedList.appendChild(timeStampNode);
-        // unorderedList.appendChild(commentNode);
+    
         unorderedList.appendChild(dividerNode);
   
 
-    
+}
+
+
+let displayComment = ()=>{
+    let unorderedList = document.querySelector('#comments-list');
+   
+    for (let i=0;i<comments.length;i++){
+        let commentObject = comments[i]
+        addComment(commentObject, unorderedList);
+        
     }
     
 }
 
 displayComment();
+
+
+
+
 
 
