@@ -24,14 +24,10 @@ itemForm.addEventListener('submit', function (event){
   event.preventDefault();
   const nameInputVal = event.target.nameInput.value; // nameInput matches form input value of the name attr
   const commentInputVal=event.target.commentInput.value;
+
   
-//   const nameListElement = document.createElement('li');
-//   const commentListElement= document.createElement('li');
-//   nameListElement.innerText = nameInputVal;
-//   commentListElement.innerText = commentInputVal;
-  
-  dynamicContent.appendChild(nameListElement);
-  dynamicContent.appendChild(commentListElement);
+//   dynamicContent.appendChild(nameListElement);
+//   dynamicContent.appendChild(commentListElement);
 
   let newCommentObject = {
       name:nameInputVal,
@@ -41,7 +37,11 @@ itemForm.addEventListener('submit', function (event){
   
   comments.push(newCommentObject);
   let unorderedList = document.querySelector('#comments-list');
-  addComment(newCommentObject, unorderedList);
+  for (let i=0;i<comments.length;i++){
+    let commentObject = comments[i]
+    addComment(commentObject, unorderedList);
+
+  }
 
 
 
