@@ -17,17 +17,12 @@ let comments = [
         timeStamp: '12/20/2020',
         comment:"I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
     }
-
 ];
 
 itemForm.addEventListener('submit', function (event){
   event.preventDefault();
-  const nameInputVal = event.target.nameInput.value; // nameInput matches form input value of the name attr
+  const nameInputVal = event.target.nameInput.value; 
   const commentInputVal=event.target.commentInput.value;
-
-  
-//   dynamicContent.appendChild(nameListElement);
-//   dynamicContent.appendChild(commentListElement);
 
   let newCommentObject = {
       name:nameInputVal,
@@ -35,27 +30,14 @@ itemForm.addEventListener('submit', function (event){
       comment:commentInputVal,
   }
   
-  comments.push(newCommentObject);
+  comments.unshift(newCommentObject);
   let unorderedList = document.querySelector('#comments-list');
   for (let i=0;i<comments.length;i++){
     let commentObject = comments[i]
-    addComment(commentObject, unorderedList);
+    displayComment(commentObject, unorderedList);
 
   }
-
-
-
-  
 });
-
-
-
-
-
-
-
-
-
 
 let addComment=(commentObject, unorderedList)=>{
     
@@ -80,37 +62,29 @@ let addComment=(commentObject, unorderedList)=>{
         timeStampNode.innerText = commentObject.timeStamp;
         commentNode.innerText = commentObject.comment;
 
-        
-
-
-      
-
         avatarContainerNode.innerHTML = avatarNode.outerHTML;
-
-       
         inputContainerNode.innerHTML = nameNode.outerHTML + timeStampNode.outerHTML + commentNode.outerHTML;
         innerContainerNode.innerHTML= avatarContainerNode.outerHTML + inputContainerNode.outerHTML;
+        
         unorderedList.appendChild(innerContainerNode);
-
-    
         unorderedList.appendChild(dividerNode);
   
-
 }
-
 
 let displayComment = ()=>{
     let unorderedList = document.querySelector('#comments-list');
+    unorderedList.innerHTML = '';
    
     for (let i=0;i<comments.length;i++){
         let commentObject = comments[i]
         addComment(commentObject, unorderedList);
         
-    }
-    
+    } 
 }
 
 displayComment();
+
+
 
 
 
