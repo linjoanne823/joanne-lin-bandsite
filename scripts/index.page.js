@@ -22,7 +22,9 @@ let comments = [
 itemForm.addEventListener('submit', function (event){
   event.preventDefault();
   const nameInputVal = event.target.nameInput.value; 
+  event.target.nameInput.value = '';
   const commentInputVal=event.target.commentInput.value;
+  event.target.commentInput.value = '';
 
   let newCommentObject = {
       name:nameInputVal,
