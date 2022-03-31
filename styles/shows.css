@@ -475,20 +475,37 @@ button {
   }
 }
 @media screen and (min-width: 768px) {
+  .secondary-hero__song-container {
+    width: 50%;
+    padding-left: 3rem;
+  }
   .secondary-hero__text-container {
     margin: 0 3.1rem;
-    padding: 8.125rem 0;
+    padding: 1.5rem 0;
+  }
+  .secondary-hero__smaller-text {
+    font-size: 25px;
   }
   .secondary-hero__text {
     font-size: 60px;
     width: 33rem;
+    margin: 0;
   }
 }
 @media screen and (min-width: 1280px) {
+  .secondary-hero__outer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .secondary-hero__song-container {
+    max-width: 30rem;
+    padding: 1rem;
+    align-self: center;
+  }
   .secondary-hero__text-container {
     max-width: 30rem;
-    padding: 13rem 43rem 15rem 8rem;
-    margin: 0 auto;
+    padding: 10rem 4rem 12rem 4rem;
   }
   .secondary-hero__text {
     width: 31.25rem;
@@ -520,6 +537,10 @@ button {
   padding: 0.5rem 0;
 }
 .shows-section__venue {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
   padding: 0.5rem 0;
 }
 .shows-section__location {
@@ -540,6 +561,9 @@ button {
   font-size: 0.9rem;
 }
 @media screen and (min-width: 768px) {
+  .shows-section__title {
+    margin-left: 3rem;
+  }
   .shows-section__inner-container {
     display: flex;
     flex-direction: row;
@@ -558,22 +582,18 @@ button {
     padding: 0;
   }
   .shows-section__location {
-    padding: 0.5rem 0;
+    padding: 0;
   }
 }
 
-#table :first-child li {
-  display: flex;
-  position: relative;
-  bottom: 30px;
-  left: 25px;
-  padding-bottom: 0.5rem;
-}
-#table :first-child div {
-  display: flex;
-  justify-content: space-evenly;
-  position: relative;
-  left: -20px;
+@media screen and (min-width: 768px) {
+  #table :first-child li {
+    display: inline-block;
+    position: relative;
+    bottom: 40px;
+    margin-bottom: 0;
+    left: 25px;
+  }
 }
 
 #shows-list {
