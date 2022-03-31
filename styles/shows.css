@@ -181,7 +181,7 @@
   margin-bottom: 0;
 }
 .primary-nav__list-item-container {
-  padding: 0 20%;
+  padding: 0 15%;
 }
 .primary-nav__list-item-container--highlighted {
   text-align: center;
@@ -193,7 +193,7 @@
 }
 .primary-nav__list-item--highlighted {
   font-weight: 600;
-  padding: 0 0 1rem 1rem;
+  padding: 0 0 1rem 0;
 }
 @media screen and (min-width: 768px) {
   .primary-nav__logo-card {
@@ -476,13 +476,12 @@ button {
 }
 @media screen and (min-width: 768px) {
   .secondary-hero__text-container {
-    margin: 0 2.25rem;
+    margin: 0 3.1rem;
     padding: 8.125rem 0;
   }
   .secondary-hero__text {
     font-size: 60px;
-    width: 31.25rem;
-    padding-left: 0.625rem;
+    width: 33rem;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -539,6 +538,42 @@ button {
   width: 100%;
   border-radius: 4px;
   font-size: 0.9rem;
+}
+@media screen and (min-width: 768px) {
+  .shows-section__inner-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+  }
+  .shows-section__li {
+    display: none;
+  }
+  .shows-section__button {
+    width: 20%;
+    border-radius: 6px;
+  }
+  .shows-section__divider {
+    padding: 0;
+  }
+  .shows-section__location {
+    padding: 0.5rem 0;
+  }
+}
+
+#table :first-child li {
+  display: flex;
+  position: relative;
+  bottom: 30px;
+  left: 25px;
+  padding-bottom: 0.5rem;
+}
+#table :first-child div {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  left: -20px;
 }
 
 #shows-list {

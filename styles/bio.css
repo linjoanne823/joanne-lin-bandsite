@@ -181,7 +181,7 @@
   margin-bottom: 0;
 }
 .primary-nav__list-item-container {
-  padding: 0 20%;
+  padding: 0 15%;
 }
 .primary-nav__list-item-container--highlighted {
   text-align: center;
@@ -193,7 +193,7 @@
 }
 .primary-nav__list-item--highlighted {
   font-weight: 600;
-  padding: 0 0 1rem 1rem;
+  padding: 0 0 1rem 0;
 }
 @media screen and (min-width: 768px) {
   .primary-nav__logo-card {

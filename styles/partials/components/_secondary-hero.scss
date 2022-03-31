@@ -47,14 +47,13 @@
 
     @include tablet{
         &__text-container{
-            margin: 0 2.25rem;
+            margin: 0 3.1rem;
             padding:8.125rem 0;
         }
 
         &__text{
             font-size:60px;
-            width:31.25rem;
-            padding-left:0.625rem;
+            width:33rem;
         }
     }
 

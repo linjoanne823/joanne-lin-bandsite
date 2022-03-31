@@ -79,7 +79,6 @@ let shows = [
   
   let displayShows = ()=>{
       let unorderedList = document.querySelector('#table');
-    
      
       for (let i=0;i<shows.length;i++){
           let showsObject = shows[i]
