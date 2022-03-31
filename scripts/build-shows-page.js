@@ -40,8 +40,11 @@ let shows = [
           dividerNode.classList.add("shows-section__divider");
           let innerContainerNode = document.createElement('div');
           innerContainerNode.classList.add("shows-section__inner-container");
-        //   let inputContainerNode = document.createElement('div');
-        //   inputContainerNode.classList.add("shows-section__input-container");
+
+          //when the row is selected or active
+
+          innerContainerNode.classList.add("shows-section__inner-container--active")
+       
           let dateHeaderNode = document.createElement('li');
           dateHeaderNode.classList.add("shows-section__li");
           let dateNode = document.createElement ('div');

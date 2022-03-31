@@ -45,14 +45,18 @@ let addComment=(commentObject, unorderedList)=>{
     
         let dividerNode = document.createElement('div');
         dividerNode.classList.add("comment-section__divider");
+        let outerContainerNode = document.createElement('div');
+        outerContainerNode.classList.add("comment-section__outer-container");
         let innerContainerNode = document.createElement('div');
         innerContainerNode.classList.add("comment-section__inner-container");
         let avatarContainerNode = document.createElement('div');
-        avatarContainerNode.classList.add("comment-section__avatar-container");
+        avatarContainerNode.classList.add("comment-section__avatar-container--previous");
         let avatarNode = document.createElement('div');
         avatarNode.classList.add("comment-section__avatar");
         let inputContainerNode = document.createElement('div');
         inputContainerNode.classList.add("comment-section__input-container");
+        let rowContainerNode=document.createElement('div');
+        rowContainerNode.classList.add("comment-section__row-container");
         let nameNode = document.createElement ('span');
         nameNode.classList.add("comment-section__name");
         let timeStampNode = document.createElement ('span');
@@ -65,17 +69,28 @@ let addComment=(commentObject, unorderedList)=>{
         commentNode.innerText = commentObject.comment;
 
         avatarContainerNode.innerHTML = avatarNode.outerHTML;
-        inputContainerNode.innerHTML = nameNode.outerHTML + timeStampNode.outerHTML + commentNode.outerHTML;
+        rowContainerNode.innerHTML= nameNode.outerHTML + timeStampNode.outerHTML
+        inputContainerNode.innerHTML = rowContainerNode.outerHTML + commentNode.outerHTML;
         innerContainerNode.innerHTML= avatarContainerNode.outerHTML + inputContainerNode.outerHTML;
         
-        unorderedList.appendChild(innerContainerNode);
-        unorderedList.appendChild(dividerNode);
+        outerContainerNode.innerHTML= innerContainerNode.outerHTML + dividerNode.outerHTML;
+
+      
+      
+        unorderedList.appendChild(outerContainerNode);
+       
+
+
+       
   
 }
 
 let displayComment = ()=>{
     let unorderedList = document.querySelector('#comments-list');
     unorderedList.innerHTML = '';
+    let dividerNode = document.createElement('div');
+    dividerNode.classList.add("comment-section__divider");
+    unorderedList.appendChild(dividerNode);
    
     for (let i=0;i<comments.length;i++){
         let commentObject = comments[i]

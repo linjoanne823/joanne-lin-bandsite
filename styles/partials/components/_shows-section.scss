@@ -2,6 +2,7 @@
 @use '../mixins' as *;
 
 .shows-section{
+   
 
     &__title{
         font-weight:600;
@@ -13,11 +14,22 @@
         display:flex;
         flex-direction:column;
         margin:1rem;
-        
+
         &:hover{
             background-color:variables.$hover-state-row;
-            
+            margin: 0;
+            padding: 1rem;
+           
         }
+        &--active{
+            &:active{
+                background-color:variables.$active-state-row;
+            }
+        }
+
+       
+        
+        
     }
 
     
@@ -53,7 +65,7 @@
     }
 
     &__divider{
-        width:100vw;
+        width:100%;
         border-bottom: 1px solid variables.$divider;
         padding:0.5rem 0;
         margin:0;
@@ -103,6 +115,13 @@
         }
     }
 
+    @include desktop{
+        &__title{
+            padding: 1.5rem 6rem;
+        }
+    }
+    
+
 }
  #table{
 
@@ -119,6 +138,11 @@
      }
      
     }
+    @include desktop{
+       
+        padding:0 3rem 0 17rem;
+    }
+
      
 }
 
@@ -127,6 +151,8 @@
      padding:0;
      
  }   
+
+ 
 
 
 

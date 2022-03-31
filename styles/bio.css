@@ -378,15 +378,23 @@
 }
 .comment-section__title {
   font-weight: 600;
+  margin: 1rem 0;
 }
 .comment-section__inner-container {
   display: flex;
   flex-direction: row;
+  margin-top: 1rem;
+}
+.comment-section__input-container {
+  padding-top: 0;
 }
 .comment-section__avatar-container {
-  padding: 3rem 1rem 1rem 1rem;
+  padding: 2rem 1rem 1rem 0;
   display: flex;
   flex-direction: column;
+}
+.comment-section__avatar-container--previous {
+  padding: 0 1rem 0 0;
 }
 .comment-section__avatar {
   width: 36px;
@@ -397,6 +405,8 @@
 }
 .comment-section__field-name {
   color: #AFAFAF;
+  font-size: 0.8rem;
+  padding: 1.5rem 0;
 }
 .comment-section__field {
   width: 100%;
@@ -404,14 +414,48 @@
   border-radius: 4px;
   padding: 5px;
   border: 1px solid #E1E1E1;
+  margin-top: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+.comment-section__field::-moz-placeholder {
+  color: #323232;
+  padding: 0.5rem;
+}
+.comment-section__field:-ms-input-placeholder {
+  color: #323232;
+  padding: 0.5rem;
+}
+.comment-section__field::placeholder {
+  color: #323232;
+  padding: 0.5rem;
+}
+.comment-section__field--big {
+  width: 100%;
+  height: 100px;
+  font-family: inherit;
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #E1E1E1;
+  border-radius: 4px;
+}
+.comment-section__field--big::-moz-placeholder {
+  color: #323232;
+  padding: 0.5rem;
+}
+.comment-section__field--big:-ms-input-placeholder {
+  color: #323232;
+  padding: 0.5rem;
+}
+.comment-section__field--big::placeholder {
+  color: #323232;
+  padding: 0.5rem;
 }
 .comment-section__name {
   font-weight: 600;
-  padding-right: 1rem;
+  padding: 0.5rem 1rem 0 0;
 }
 .comment-section__timestamp {
   color: #E1E1E1;
-  padding: 0 2rem;
 }
 .comment-section__comment {
   padding: 1rem 0;
@@ -419,6 +463,31 @@
 .comment-section__divider {
   width: 100%;
   border: 1px solid #E1E1E1;
+}
+@media screen and (min-width: 768px) {
+  .comment-section__title {
+    padding: 0 10rem 0 1.8rem;
+    font-size: 2.25rem;
+    margin: 2.5rem auto;
+    max-width: 55rem;
+  }
+  .comment-section__row-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .comment-section__inner-container {
+    padding: 1rem 0;
+    margin: 0 auto;
+    max-width: 38rem;
+  }
+  .comment-section__input-container {
+    width: 88%;
+  }
+  .comment-section__divider {
+    max-width: 38rem;
+    margin: 0 auto;
+  }
 }
 
 #comments-list {
@@ -440,6 +509,13 @@ button {
   height: 40px;
   width: 100%;
   border-radius: 4px;
+}
+@media screen and (min-width: 768px) {
+  button {
+    width: 30%;
+    position: relative;
+    left: 400px;
+  }
 }
 
 body {
