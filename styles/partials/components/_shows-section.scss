@@ -1,0 +1,83 @@
+@use '../variables';
+@use '../mixins' as *;
+
+.shows-section{
+
+    &__title{
+        font-weight:600;
+        padding:1rem 0;
+        margin:1rem;
+    }
+    
+    &__inner-container{
+        display:flex;
+        flex-direction:column;
+        margin:1rem;
+        
+        &:hover{
+            background-color:variables.$hover-state-row;
+            
+        }
+    }
+
+    
+    &__li{
+        list-style:none;
+        padding-top: 1rem;
+        color: variables.$secondary-text;
+        font-weight:550;
+        font-size:0.8rem;
+    
+    }
+   
+    
+
+    &__date{
+        font-weight:550;
+        padding:0.5rem 0;
+
+       
+    }
+
+    &__venue{
+        
+        padding:0.5rem 0;
+    }
+
+    &__location{
+        padding: 0.5rem 0 1.5rem 0;
+    }
+
+    &__divider{
+        width:100vw;
+        border-bottom: 1px solid variables.$divider;
+        padding:0.5rem 0;
+        margin:0;
+    
+    }
+    &__button{
+        background-color: variables.$primary-background;
+        color:variables.$primary-text;
+        height:40px;
+        width:100%;
+        border-radius:4px;
+        font-size:0.9rem;
+    }
+  
+
+
+}
+    
+
+ #shows-list{
+     list-style:none;
+     padding:0;
+     
+ }   
+
+
+
+ 
+
+ 
+

@@ -1,0 +1,20 @@
+@use './partials/fonts' as *;
+@use './partials/variables';
+
+@use './partials/components/band-gallery';
+@use './partials/components/band-photo';
+@use './partials/components/primary-footer';
+@use './partials/components/primary-nav';
+@use './partials/components/primary-hero';
+@use './partials/components/primary-intro';
+@use './partials/components/comment-section';
+@use './partials/components/secondary-hero';
+@use './partials/components/shows-section';
+
+
+body{
+    font-family:'AvenirNext';
+    margin:0;
+}
+
+

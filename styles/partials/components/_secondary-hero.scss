@@ -1,0 +1,72 @@
+@use '../variables';
+@use '../mixins' as *;
+
+.secondary-hero{
+
+    
+    
+     &__background-image{
+         background: linear-gradient(rgba(50, 50, 50, 0.5), 
+         rgba(50, 50, 50, 0.5)),url(../assets/images/hero-shows.jpg);
+         background-size:cover;
+         background-repeat:no-repeat;
+         background-position-y:30%;
+     }  
+     
+    &__song-container{
+        padding:1rem;
+    }
+        
+    &__text-container{
+        color:#FFFFFF;
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        padding: 2rem 0 0 1.25rem; 
+  
+    }
+    
+    &__text{
+        font-weight:600;
+        color: variables.$primary-text;
+        font-size:1.5rem;
+        width:13rem;
+    }
+
+    @include midMobile{
+        &__text-container{
+            margin: 0 1.75rem;
+            padding:6.25rem 0 6.25rem 0.125rem;
+        }
+
+        &__text{
+            font-size:2.5rem;
+            width:25rem;
+        }
+    }
+
+    @include tablet{
+        &__text-container{
+            margin: 0 2.25rem;
+            padding:8.125rem 0;
+        }
+
+        &__text{
+            font-size:60px;
+            width:31.25rem;
+            padding-left:0.625rem;
+        }
+    }
+
+    @include desktop{
+        &__text-container{
+            max-width:30rem;
+            padding:13rem 43rem 15rem 8rem;
+            margin: 0 auto;  
+        }
+
+        &__text{
+            width:31.25rem;
+        }
+    }
+}
