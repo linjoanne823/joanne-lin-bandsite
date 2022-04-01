@@ -501,6 +501,9 @@
     position: relative;
     left: 400px;
   }
+  .comment-section__button:hover {
+    background-color: #000000;
+  }
 }
 
 #comments-list {

@@ -134,6 +134,9 @@
             width:30%;
             position:relative;
             left:400px;
+            &:hover{
+                background-color:variables.$hover-button-background;
+            }
         }
     }
 

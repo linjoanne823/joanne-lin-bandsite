@@ -31,7 +31,23 @@ itemForm.addEventListener('submit', function (event){
       timeStamp: new Date(),
       comment:commentInputVal,
   }
+
+  let month = newCommentObject.timeStamp.getMonth() +1;
+  let day = newCommentObject.timeStamp.getDate();
+  let year = newCommentObject.timeStamp.getFullYear();
+
   
+
+  if(day<10){
+      day='0'+day
+  };
+
+  if(month<10){
+      month = '0' + month;
+  }
+
+  newCommentObject.timeStamp = month + '/' + day + '/' + year;
+
   comments.unshift(newCommentObject);
   let unorderedList = document.querySelector('#comments-list');
   for (let i=0;i<comments.length;i++){
