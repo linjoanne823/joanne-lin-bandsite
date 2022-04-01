@@ -10,7 +10,7 @@
 @use './partials/components/comment-section';
 
 
-body{
+body, textarea, input{
     font-family:'AvenirNext';
     margin:0;
 }

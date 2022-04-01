@@ -1,6 +1,3 @@
-
-// let button = document.querySelector('button');
-
 let shows = [
     {
         date: 'Mon Sept 06 2021',
@@ -106,7 +103,7 @@ let shows = [
           dateContainerNode.innerHTML = dateHeaderNode.outerHTML + dateNode.outerHTML;
           venueContainerNode.innerHTML = venueHeaderNode.outerHTML + venueNode.outerHTML;
           locationContainerNode.innerHTML = locationHeaderNode.outerHTML + locationNode.outerHTML;
-          buttonContainerNode.innerHTML = emptyNode.outerHTML + buttonNode.outerHTML;
+          buttonContainerNode.innerHTML =  buttonNode.outerHTML;
 
           innerContainerNode.innerHTML = dateContainerNode.outerHTML + venueContainerNode.outerHTML + locationContainerNode.outerHTML + buttonContainerNode.outerHTML;
           tableHeaderContainerNode.innerHTML = dateTableHeaderNode.outerHTML + venueTableHeaderNode.outerHTML + locationTableHeaderNode.outerHTML+ emptyNode.outerHTML;

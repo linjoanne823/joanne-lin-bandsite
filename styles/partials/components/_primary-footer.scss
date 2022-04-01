@@ -54,6 +54,7 @@
     }
 
     @include tablet{
+        margin-top:2rem;
         &__outer-container{
             position:relative;
             margin: 0 2.25rem;
