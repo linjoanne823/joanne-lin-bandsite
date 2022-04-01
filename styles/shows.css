@@ -463,6 +463,14 @@
 .comment-section__divider {
   width: 100%;
   border: 1px solid #E1E1E1;
+  margin-bottom: 1rem;
+}
+.comment-section__button {
+  background-color: #323232;
+  color: #FFFFFF;
+  height: 40px;
+  width: 100%;
+  border-radius: 4px;
 }
 @media screen and (min-width: 768px) {
   .comment-section__title {
@@ -488,6 +496,11 @@
     max-width: 38rem;
     margin: 0 auto;
   }
+  .comment-section__button {
+    width: 30%;
+    position: relative;
+    left: 400px;
+  }
 }
 
 #comments-list {
@@ -501,21 +514,6 @@ span {
 
 #previous-comments {
   padding: 0;
-}
-
-button {
-  background-color: #323232;
-  color: #FFFFFF;
-  height: 40px;
-  width: 100%;
-  border-radius: 4px;
-}
-@media screen and (min-width: 768px) {
-  button {
-    width: 30%;
-    position: relative;
-    left: 400px;
-  }
 }
 
 .secondary-hero__background-image {
@@ -603,8 +601,14 @@ button {
   margin: 0;
   padding: 1rem;
 }
-.shows-section__inner-container--active:active {
+.shows-section__inner-container--active {
   background-color: #E1E1E1;
+}
+.shows-section__column-container {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  flex: 1 1 0;
 }
 .shows-section__li {
   list-style: none;
@@ -618,20 +622,19 @@ button {
   padding: 0.5rem 0;
 }
 .shows-section__venue {
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  align-self: flex-start;
   padding: 0.5rem 0;
 }
 .shows-section__location {
-  padding: 0.5rem 0 1.5rem 0;
+  padding: 0.5rem 0;
 }
 .shows-section__divider {
   width: 100%;
   border-bottom: 1px solid #E1E1E1;
   padding: 0.5rem 0;
   margin: 0;
+}
+.shows-section__empty {
+  display: none;
 }
 .shows-section__button {
   background-color: #323232;
@@ -652,17 +655,16 @@ button {
     align-items: center;
     padding: 0;
   }
+  .shows-section__inner-container:first-child li {
+    display: flex;
+  }
   .shows-section__li {
     display: none;
   }
   .shows-section__button {
-    width: 20%;
     border-radius: 6px;
   }
   .shows-section__divider {
-    padding: 0;
-  }
-  .shows-section__location {
     padding: 0;
   }
 }
@@ -672,13 +674,13 @@ button {
   }
 }
 
+#table {
+  padding-bottom: 1rem;
+  margin: 0 auto;
+}
 @media screen and (min-width: 768px) {
-  #table :first-child li {
-    display: inline-block;
-    position: relative;
-    bottom: 40px;
-    margin-bottom: 0;
-    left: 25px;
+  #table {
+    max-width: 43rem;
   }
 }
 @media screen and (min-width: 1280px) {

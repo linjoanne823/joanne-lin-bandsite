@@ -92,7 +92,15 @@
         width:100%;
         border: 1px solid variables.$divider;
         
-        // margin-bottom:1rem;
+        margin-bottom:1rem;
+    }
+    &__button{
+        background-color: variables.$primary-background;
+        color:variables.$primary-text;
+        height:40px;
+        width:100%;
+        border-radius:4px;
+
     }
 
     @include tablet{
@@ -122,6 +130,11 @@
             max-width:38rem;
             margin: 0 auto;
         }
+        &__button{
+            width:30%;
+            position:relative;
+            left:400px;
+        }
     }
 
     
@@ -144,18 +157,4 @@
      padding:0;
  }
 
- button{
-     background-color: variables.$primary-background;
-     color:variables.$primary-text;
-     height:40px;
-     width:100%;
-     border-radius:4px;
-
-     @include tablet{
-         width:30%;
-         position:relative;
-         left:400px;
-     }
-
- }
 

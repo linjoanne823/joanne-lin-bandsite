@@ -14,25 +14,36 @@
         display:flex;
         flex-direction:column;
         margin:1rem;
-
+        
         &:hover{
             background-color:variables.$hover-state-row;
             margin: 0;
             padding: 1rem;
            
         }
+        
         &--active{
-            &:active{
-                background-color:variables.$active-state-row;
-            }
+            background-color:variables.$active-state-row;
+        
         }
+
+       
+        
 
        
         
         
     }
 
-    
+    &__column-container{
+        display:flex;
+        flex-direction:column;
+        align-items:space-between;
+        flex:1 1 0;
+    }
+
+   
+
     &__li{
         list-style:none;
         padding-top: 1rem;
@@ -41,6 +52,8 @@
         font-size:0.8rem;
     
     }
+
+   
    
     
 
@@ -51,17 +64,12 @@
        
     }
 
-    &__venue{
-        text-align:left;
-        display:flex;
-        flex-direction:column;
-        align-self:flex-start;
-        
+    &__venue{  
         padding:0.5rem 0;
     }
 
     &__location{
-        padding: 0.5rem 0 1.5rem 0;
+        padding: 0.5rem 0;
     }
 
     &__divider{
@@ -70,6 +78,10 @@
         padding:0.5rem 0;
         margin:0;
     
+    }
+
+    &__empty{
+        display:none;
     }
     &__button{
         background-color: variables.$primary-background;
@@ -91,6 +103,12 @@
             align-items:center;
 
             padding:0;
+
+            &:first-child li{
+                display:flex;
+            }
+            
+            
         
         }
 
@@ -99,8 +117,11 @@
             display:none;
         }
 
+       
+        
+
         &__button{
-            width:20%;
+    
             border-radius:6px;
 
         }
@@ -109,10 +130,10 @@
             padding:0;
         }
 
-        &__location{
-            padding: 0;
+        // &__location{
+        //     padding: 0;
             
-        }
+        // }
     }
 
     @include desktop{
@@ -124,26 +145,22 @@
 
 }
  #table{
+     padding-bottom:1rem;
+     margin: 0 auto;
+     @include tablet{
+         max-width:43rem;
 
-    @include tablet{
-     :first-child li{
-        display:inline-block;
-        position:relative;
-        bottom:40px;
-        margin-bottom:0;
-        left:25px;
-        // padding-bottom:0.5rem;
-     
-         
      }
+
+
      
-    }
+    
     @include desktop{
        
         padding:0 3rem 0 17rem;
     }
 
-     
+
 }
 
  #shows-list{

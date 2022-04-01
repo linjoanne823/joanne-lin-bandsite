@@ -463,6 +463,14 @@
 .comment-section__divider {
   width: 100%;
   border: 1px solid #E1E1E1;
+  margin-bottom: 1rem;
+}
+.comment-section__button {
+  background-color: #323232;
+  color: #FFFFFF;
+  height: 40px;
+  width: 100%;
+  border-radius: 4px;
 }
 @media screen and (min-width: 768px) {
   .comment-section__title {
@@ -488,6 +496,11 @@
     max-width: 38rem;
     margin: 0 auto;
   }
+  .comment-section__button {
+    width: 30%;
+    position: relative;
+    left: 400px;
+  }
 }
 
 #comments-list {
@@ -501,21 +514,6 @@ span {
 
 #previous-comments {
   padding: 0;
-}
-
-button {
-  background-color: #323232;
-  color: #FFFFFF;
-  height: 40px;
-  width: 100%;
-  border-radius: 4px;
-}
-@media screen and (min-width: 768px) {
-  button {
-    width: 30%;
-    position: relative;
-    left: 400px;
-  }
 }
 
 body {
