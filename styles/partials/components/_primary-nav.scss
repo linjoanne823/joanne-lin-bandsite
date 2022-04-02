@@ -26,6 +26,10 @@
 
     &__list-item-container{
         padding: 0 15%;
+
+        &:hover{
+            border-bottom: 5px solid #ffffff;
+        }
    
        &--highlighted{
             text-align:center;
@@ -36,6 +40,10 @@
 
     &__list-item{
         color:#E1E1E1;
+
+        &:hover{
+            color:variables.$hover-active-link-text
+        }
 
        &--highlighted{
            font-weight:600;

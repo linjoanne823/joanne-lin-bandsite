@@ -26,6 +26,7 @@ itemForm.addEventListener('submit', function (event){
   const commentInputVal=event.target.commentInput.value;
   event.target.commentInput.value = '';
 
+
   let newCommentObject = {
       name:nameInputVal,
       timeStamp: new Date(),
