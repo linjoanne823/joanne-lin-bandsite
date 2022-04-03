@@ -26,6 +26,7 @@
 
     &__list-item-container{
         padding: 0 15%;
+      
 
         &:hover{
             border-bottom: 5px solid #ffffff;
@@ -39,7 +40,7 @@
     }
 
     &__list-item{
-        color:#E1E1E1;
+        color:variables.$inactive-link-text;
 
         &:hover{
             color:variables.$hover-active-link-text
@@ -85,4 +86,9 @@
            margin: 0 auto;
        }
     } 
+}
+
+a{
+    text-decoration:none;
+    color:variables.$hover-active-link-text;
 }

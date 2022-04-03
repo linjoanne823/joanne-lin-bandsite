@@ -2,9 +2,6 @@
 @use '../mixins' as *;
 
 .secondary-hero{
-
-    
-    
      &__background-image{
          background: linear-gradient(rgba(50, 50, 50, 0.5), 
          rgba(50, 50, 50, 0.5)),url(../assets/images/hero-shows.jpg);
@@ -18,12 +15,11 @@
     }
         
     &__text-container{
-        color:#FFFFFF;
+        color:variables.$primary-text;
         display:flex;
         flex-direction:column;
         align-items:flex-start;
         padding: 2rem 0 0 1.25rem; 
-  
     }
     
     &__text{
@@ -53,17 +49,15 @@
         }
         &__text-container{
             margin: 0 3.1rem;
-            padding:1.5rem 0;
-            
+            padding:1.5rem 0; 
         }
 
         &__smaller-text{
-            font-size:25px;
-          
+            font-size:1.5625rem;
         }
 
         &__text{
-            font-size:60px;
+            font-size:3.75rem;
             width:33rem;
             margin:0;
         }
@@ -74,19 +68,18 @@
             display:flex;
             flex-direction:row;
             justify-content:space-evenly;
+            margin: 0 auto;
+            max-width:89rem;
         }
+
         &__song-container{
             max-width:30rem;
             padding:1rem;
-            // display:flex;
             align-self:center;
-            // margin: 0 auto;
         }
         &__text-container{
-            max-width:30rem;
-            padding: 10rem 4rem 12rem 4rem;
-            // padding:13rem 43rem 15rem 8rem;
-            // margin: 0 auto;  
+            max-width:20rem;
+            padding: 10rem 4rem 12rem 0;
         }
 
         &__text{

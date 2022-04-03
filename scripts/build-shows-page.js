@@ -38,29 +38,27 @@ let shows = [
           let innerContainerNode = document.createElement('div');
           innerContainerNode.classList.add("shows-section__inner-container");
 
-       
           let dateContainerNode = document.createElement('div');
           dateContainerNode.classList.add("shows-section__column-container");
           let dateHeaderNode = document.createElement('div');
           dateHeaderNode.classList.add("shows-section__mobile-header");
           let dateNode = document.createElement ('div');
-          dateNode.classList.add("shows-section__date");
+          dateNode.classList.add("shows-section__text--date");
 
           let venueContainerNode = document.createElement('div');
           venueContainerNode.classList.add("shows-section__column-container");
           let venueHeaderNode = document.createElement('div');
           venueHeaderNode.classList.add("shows-section__mobile-header");
           let venueNode = document.createElement ('div');
-          venueNode.classList.add("shows-section__venue");
+          venueNode.classList.add("shows-section__text--venue");
 
           let locationContainerNode=document.createElement('div');
           locationContainerNode.classList.add("shows-section__column-container");
           let locationHeaderNode=document.createElement('div');
           locationHeaderNode.classList.add("shows-section__mobile-header");
           let locationNode = document.createElement('div');
-          locationNode.classList.add("shows-section__location");
+          locationNode.classList.add("shows-section__text--location");
         
-          
           let buttonContainerNode=document.createElement('div');
           buttonContainerNode.classList.add("shows-section__column-container");
           let emptyNode=document.createElement('div');
@@ -69,19 +67,16 @@ let shows = [
           buttonNode.classList.add("shows-section__button");
           buttonNode.innerText = "BUY TICKETS";
 
-        //table header for tablet and desktop 
           let dateTableHeaderNode=document.createElement('div');
-          dateTableHeaderNode.classList.add("shows-section__table-header");
+          dateTableHeaderNode.classList.add("shows-section__table-header--date");
           let venueTableHeaderNode=document.createElement('div');
-          venueTableHeaderNode.classList.add("shows-section__table-header");
+          venueTableHeaderNode.classList.add("shows-section__table-header--venue");
           let locationTableHeaderNode=document.createElement ('div');
-          locationTableHeaderNode.classList.add("shows-section__table-header");
+          locationTableHeaderNode.classList.add("shows-section__table-header--location");
 
           let tableHeaderContainerNode=document.createElement('div');
           tableHeaderContainerNode.classList.add("shows-section__table-header-container");
 
-
-        // header and text for mobile. This will be disabled on tablet and desktop 
           dateHeaderNode.innerText = "DATE";
           dateNode.innerText = showsObject.date;
           venueHeaderNode.innerText = "VENUE";
@@ -90,15 +85,10 @@ let shows = [
           locationNode.innerText = showsObject.location;
           emptyNode.innerText= '\u00A0';
 
-        //table header for tablet and desktop (td)
           dateTableHeaderNode.innerText ="DATE";
           venueTableHeaderNode.innerText ="VENUE";
           locationTableHeaderNode.innerText ="LOCATION";
           
-        
-     
-
-
 
           dateContainerNode.innerHTML = dateHeaderNode.outerHTML + dateNode.outerHTML;
           venueContainerNode.innerHTML = venueHeaderNode.outerHTML + venueNode.outerHTML;
@@ -108,13 +98,10 @@ let shows = [
           innerContainerNode.innerHTML = dateContainerNode.outerHTML + venueContainerNode.outerHTML + locationContainerNode.outerHTML + buttonContainerNode.outerHTML;
           tableHeaderContainerNode.innerHTML = dateTableHeaderNode.outerHTML + venueTableHeaderNode.outerHTML + locationTableHeaderNode.outerHTML+ emptyNode.outerHTML;
           
-   
           showsTable.appendChild(tableHeaderContainerNode);
           showsTable.appendChild(innerContainerNode);
           showsTable.appendChild(dividerNode);
 
-
-          
             innerContainerNode.addEventListener("click", function(){
                 let selectedRow = document.getElementsByClassName("shows-section__inner-container--active");
                 for (let i=0;i<selectedRow.length;i++){
@@ -126,7 +113,6 @@ let shows = [
   
   let displayShows = ()=>{
       let showsTable = document.querySelector('#table');
-     
       for (let i=0;i<shows.length;i++){
           let showsObject = shows[i]
           showsSection(showsObject, showsTable);

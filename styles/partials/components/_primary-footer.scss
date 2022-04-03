@@ -55,9 +55,10 @@
 
     @include tablet{
         margin-top:2rem;
+
         &__outer-container{
             position:relative;
-            margin: 0 2.25rem;
+            margin: 0 2.7rem;
             padding-bottom:2.25rem;
         }
 
@@ -88,7 +89,7 @@
             position:absolute;
             top:45px;
             right:5px;
-            }
+        }
         
         &__text-wrapper{
             display:flex;
@@ -100,7 +101,6 @@
             flex-direction:column;
             justify-content:space-evenly;
             padding-right:1rem;
- 
         }
     }
     

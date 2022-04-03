@@ -26,7 +26,6 @@ itemForm.addEventListener('submit', function (event){
   const commentInputVal=event.target.commentInput.value;
   event.target.commentInput.value = '';
 
-
   let newCommentObject = {
       name:nameInputVal,
       timeStamp: new Date(),
@@ -36,8 +35,6 @@ itemForm.addEventListener('submit', function (event){
   let month = newCommentObject.timeStamp.getMonth() +1;
   let day = newCommentObject.timeStamp.getDate();
   let year = newCommentObject.timeStamp.getFullYear();
-
-  
 
   if(day<10){
       day='0'+day
@@ -50,15 +47,15 @@ itemForm.addEventListener('submit', function (event){
   newCommentObject.timeStamp = month + '/' + day + '/' + year;
 
   comments.unshift(newCommentObject);
-  let unorderedList = document.querySelector('#comments-list');
+  let commentList = document.querySelector('#comments-list');
   for (let i=0;i<comments.length;i++){
     let commentObject = comments[i]
-    displayComment(commentObject, unorderedList);
+    displayComment(commentObject, commentList);
 
   }
 });
 
-let addComment=(commentObject, unorderedList)=>{
+let addComment=(commentObject, commentList)=>{
     
         let dividerNode = document.createElement('div');
         dividerNode.classList.add("comment-section__divider");
@@ -92,26 +89,20 @@ let addComment=(commentObject, unorderedList)=>{
         
         outerContainerNode.innerHTML= innerContainerNode.outerHTML + dividerNode.outerHTML;
 
-      
-      
-        unorderedList.appendChild(outerContainerNode);
-       
-
-
-       
-  
+        commentList.appendChild(outerContainerNode);
+        
 }
 
 let displayComment = ()=>{
-    let unorderedList = document.querySelector('#comments-list');
-    unorderedList.innerHTML = '';
+    let commentList = document.querySelector('#comments-list');
+    commentList.innerHTML = '';
     let dividerNode = document.createElement('div');
     dividerNode.classList.add("comment-section__divider");
-    unorderedList.appendChild(dividerNode);
+    commentList.appendChild(dividerNode);
    
     for (let i=0;i<comments.length;i++){
         let commentObject = comments[i]
-        addComment(commentObject, unorderedList);
+        addComment(commentObject, commentList);
         
     } 
 }
