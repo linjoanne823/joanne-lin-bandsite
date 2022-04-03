@@ -50,12 +50,12 @@ itemForm.addEventListener('submit', function (event){
   let commentList = document.querySelector('#comments-list');
   for (let i=0;i<comments.length;i++){
     let commentObject = comments[i]
-    displayComment(commentObject, commentList);
+    displayComment(commentObject);
 
   }
 });
 
-let addComment=(commentObject, commentList)=>{
+let addComment=(commentObject)=>{
     
         let dividerNode = document.createElement('div');
         dividerNode.classList.add("comment-section__divider");
@@ -89,8 +89,7 @@ let addComment=(commentObject, commentList)=>{
         
         outerContainerNode.innerHTML= innerContainerNode.outerHTML + dividerNode.outerHTML;
 
-        commentList.appendChild(outerContainerNode);
-        
+        return outerContainerNode;        
 }
 
 let displayComment = ()=>{
@@ -102,7 +101,7 @@ let displayComment = ()=>{
    
     for (let i=0;i<comments.length;i++){
         let commentObject = comments[i]
-        addComment(commentObject, commentList);
+        commentList.appendChild(addComment(commentObject));
         
     } 
 }
