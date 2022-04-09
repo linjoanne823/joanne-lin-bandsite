@@ -1,20 +1,18 @@
 const itemForm = document.getElementById('itemForm');
 const dynamicContent = document.getElementById('comments-list');
 
-
-
 //get request 
 function getRequestFunction(){
     axios.get('https://project-1-api.herokuapp.com/comments?api_key=037ccb3f-b3ad-450d-b10c-5c8d2ebdab07')
     .then((result) =>{
         const commentsFromServer = result.data;
-        console.log(commentsFromServer)
+        console.log(commentsFromServer.sort(function(x, y){
+            return y.timestamp - x.timestamp;}))
         displayComment(commentsFromServer)
     })
     .catch(error =>{
         console.log(error);
     });
-
 }
 
 getRequestFunction();
@@ -27,8 +25,7 @@ let displayComment = (commentsToDisplay)=>{
     displayContainer.appendChild(dividerNode);
 
     commentsToDisplay.forEach(commentToDisplay => {
-        displayContainer.appendChild(addComment(commentToDisplay));   
-       
+        displayContainer.appendChild(addComment(commentToDisplay));    
     }); 
 }
 
@@ -75,9 +72,6 @@ itemForm.addEventListener('submit', function (event){
     })
 });
 
-
-
-
 let addComment=(commentToAdd)=>{
     let dividerNode = document.createElement('div');
     dividerNode.classList.add("comment-section__divider");
@@ -101,21 +95,21 @@ let addComment=(commentToAdd)=>{
     commentNode.classList.add("comment-section__comment");
     nameNode.innerText = commentToAdd.name;
 
-    timeStampNode.innerText = new Date(commentToAdd.timestamp) 
-    // let month = timeStampNode.getMonth() +1;
-    // let day = timeStampNode.getDate();
-    // let year = timeStampNode.getFullYear();
+    let timeStampVariable = timeStampNode.innerText = new Date(commentToAdd.timestamp)
+    let month = timeStampVariable.getMonth()+1 
+    let day = timeStampVariable.getDate();
+    let year = timeStampVariable.getFullYear();
   
-    // if(day<10){
-    //     day='0'+day
-    // };
+    if(day<10){
+        day='0'+day
+    };
 
-    // if(month<10){
-    //     month = '0' + month;
-    // };
+    if(month<10){
+        month = '0' + month;
+    };
   
-    // timeStampNode = month + '/' + day + '/' + year;
-
+    timeStampVariable = month + '/' + day + '/' + year;
+    timeStampNode.innerText = timeStampVariable
 
     commentNode.innerText = commentToAdd.comment;
     avatarContainerNode.innerHTML = avatarNode.outerHTML;
@@ -126,11 +120,3 @@ let addComment=(commentToAdd)=>{
         
     return outerContainerNode;
 }
-
-
-
-
-
-
-
-
