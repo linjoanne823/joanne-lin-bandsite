@@ -1,126 +1,120 @@
-let shows = [
-    {
-        date: 'Mon Sept 06 2021',
-        venue: 'Ronald Lane',
-        location: 'San Francisco, CA'
-    },
-    {
-        date: 'Tue Sept 21 2021',
-        venue: 'Pier 3 East',
-        location: 'San Francisco, CA'
-    },
-    {
-        date: 'Fri Oct 15 2021',
-        venue: 'View Lounge',
-        location: 'San Francisco, CA'
-    },
-    {
-        date: 'Sat Nov 06 2021',
-        venue: 'Hyatt Agency',
-        location: 'San Francisco, CA'
-    },
-    {
-        date: 'Fri Nov 26 2021',
-        venue: 'Moscow Center',
-        location: 'San Francisco, CA'
-    },
-    {
-        date: 'Wed Dec 15 2021',
-        venue: 'Press Club',
-        location: 'San Francisco, CA'
-    }
-]
 
-  let showsSection=(showsObject, showsTable)=>{
+//get request 
+
+axios.get('https://project-1-api.herokuapp.com/showdates?api_key=037ccb3f-b3ad-450d-b10c-5c8d2ebdab07')
+    .then((result) =>{
+        const showsFromServer = result.data;
+        console.log(showsFromServer)
+        displayShows(showsFromServer)
+    })
+    .catch(error =>{
+        console.log(error);
+    });
+
+    
+let showsSection=(showsObject, showsTable)=>{
       
-          let dividerNode = document.createElement('div');
-          dividerNode.classList.add("shows-section__divider");
-          let innerContainerNode = document.createElement('div');
-          innerContainerNode.classList.add("shows-section__inner-container");
+    let dividerNode = document.createElement('div');
+    dividerNode.classList.add("shows-section__divider");
+    let innerContainerNode = document.createElement('div');
+    innerContainerNode.classList.add("shows-section__inner-container");
 
-          let dateContainerNode = document.createElement('div');
-          dateContainerNode.classList.add("shows-section__column-container");
-          let dateHeaderNode = document.createElement('div');
-          dateHeaderNode.classList.add("shows-section__mobile-header");
-          let dateNode = document.createElement ('div');
-          dateNode.classList.add("shows-section__text--date");
+    let dateContainerNode = document.createElement('div');
+    dateContainerNode.classList.add("shows-section__column-container");
+    let dateHeaderNode = document.createElement('div');
+    dateHeaderNode.classList.add("shows-section__mobile-header");
+    let dateNode = document.createElement ('div');
+    dateNode.classList.add("shows-section__text--date");
 
-          let venueContainerNode = document.createElement('div');
-          venueContainerNode.classList.add("shows-section__column-container");
-          let venueHeaderNode = document.createElement('div');
-          venueHeaderNode.classList.add("shows-section__mobile-header");
-          let venueNode = document.createElement ('div');
-          venueNode.classList.add("shows-section__text--venue");
 
-          let locationContainerNode=document.createElement('div');
-          locationContainerNode.classList.add("shows-section__column-container");
-          let locationHeaderNode=document.createElement('div');
-          locationHeaderNode.classList.add("shows-section__mobile-header");
-          let locationNode = document.createElement('div');
-          locationNode.classList.add("shows-section__text--location");
+    let venueContainerNode = document.createElement('div');
+    venueContainerNode.classList.add("shows-section__column-container");
+    let venueHeaderNode = document.createElement('div');
+    venueHeaderNode.classList.add("shows-section__mobile-header");
+    let venueNode = document.createElement ('div');
+    venueNode.classList.add("shows-section__text--venue");
+
+    let locationContainerNode=document.createElement('div');
+    locationContainerNode.classList.add("shows-section__column-container");
+    let locationHeaderNode=document.createElement('div');
+    locationHeaderNode.classList.add("shows-section__mobile-header");
+    let locationNode = document.createElement('div');
+    locationNode.classList.add("shows-section__text--location");
         
-          let buttonContainerNode=document.createElement('div');
-          buttonContainerNode.classList.add("shows-section__column-container");
-          let emptyNode=document.createElement('div');
-          emptyNode.classList.add("shows-section__empty");
-          let buttonNode = document.createElement('button');
-          buttonNode.classList.add("shows-section__button");
-          buttonNode.innerText = "BUY TICKETS";
+    let buttonContainerNode=document.createElement('div');
+    buttonContainerNode.classList.add("shows-section__column-container");
+    let emptyNode=document.createElement('div');
+    emptyNode.classList.add("shows-section__empty");
+    let buttonNode = document.createElement('button');
+    buttonNode.classList.add("shows-section__button");
+    buttonNode.innerText = "BUY TICKETS";
 
-          let dateTableHeaderNode=document.createElement('div');
-          dateTableHeaderNode.classList.add("shows-section__table-header--date");
-          let venueTableHeaderNode=document.createElement('div');
-          venueTableHeaderNode.classList.add("shows-section__table-header--venue");
-          let locationTableHeaderNode=document.createElement ('div');
-          locationTableHeaderNode.classList.add("shows-section__table-header--location");
+    let dateTableHeaderNode=document.createElement('div');
+    dateTableHeaderNode.classList.add("shows-section__table-header--date");
+    let venueTableHeaderNode=document.createElement('div');
+    venueTableHeaderNode.classList.add("shows-section__table-header--venue");
+    let locationTableHeaderNode=document.createElement ('div');
+    locationTableHeaderNode.classList.add("shows-section__table-header--location");
 
-          let tableHeaderContainerNode=document.createElement('div');
-          tableHeaderContainerNode.classList.add("shows-section__table-header-container");
+    let tableHeaderContainerNode=document.createElement('div');
+    tableHeaderContainerNode.classList.add("shows-section__table-header-container");
 
-          dateHeaderNode.innerText = "DATE";
-          dateNode.innerText = showsObject.date;
-          venueHeaderNode.innerText = "VENUE";
-          venueNode.innerText = showsObject.venue;
-          locationHeaderNode.innerText= "LOCATION";
-          locationNode.innerText = showsObject.location;
-          emptyNode.innerText= '\u00A0';
+    dateHeaderNode.innerText = "DATE";
+    
+    let unixTimestamp = showsObject.date;
+    let standardDateFormat = new Date(unixTimestamp*1);
+    let dayOfTheWeek=standardDateFormat.toLocaleString("en-US", { weekday: "short"});
+    let year = standardDateFormat.toLocaleString("en-US", { year: "numeric"});
+    let month = standardDateFormat.toLocaleString("en-US", { month: "short"});
+    let day = standardDateFormat.toLocaleString("en-US", { day: "numeric"});
 
-          dateTableHeaderNode.innerText ="DATE";
-          venueTableHeaderNode.innerText ="VENUE";
-          locationTableHeaderNode.innerText ="LOCATION";
+    let humanDateFormat = dayOfTheWeek + " " + month + " " + day + " " + year;
+
+    
+    dateNode.innerText = humanDateFormat
+
+
+    venueHeaderNode.innerText = "VENUE";
+    venueNode.innerText = showsObject.place;
+    locationHeaderNode.innerText= "LOCATION";
+    locationNode.innerText = showsObject.location;
+    emptyNode.innerText= '\u00A0';
+
+    dateTableHeaderNode.innerText ="DATE";
+    venueTableHeaderNode.innerText ="VENUE";
+    locationTableHeaderNode.innerText ="LOCATION";
           
 
-          dateContainerNode.innerHTML = dateHeaderNode.outerHTML + dateNode.outerHTML;
-          venueContainerNode.innerHTML = venueHeaderNode.outerHTML + venueNode.outerHTML;
-          locationContainerNode.innerHTML = locationHeaderNode.outerHTML + locationNode.outerHTML;
-          buttonContainerNode.innerHTML =  buttonNode.outerHTML;
+    dateContainerNode.innerHTML = dateHeaderNode.outerHTML + dateNode.outerHTML;
+    venueContainerNode.innerHTML = venueHeaderNode.outerHTML + venueNode.outerHTML;
+    locationContainerNode.innerHTML = locationHeaderNode.outerHTML + locationNode.outerHTML;
+    buttonContainerNode.innerHTML =  buttonNode.outerHTML;
 
-          innerContainerNode.innerHTML = dateContainerNode.outerHTML + venueContainerNode.outerHTML + locationContainerNode.outerHTML + buttonContainerNode.outerHTML;
-          tableHeaderContainerNode.innerHTML = dateTableHeaderNode.outerHTML + venueTableHeaderNode.outerHTML + locationTableHeaderNode.outerHTML+ emptyNode.outerHTML;
+    innerContainerNode.innerHTML = dateContainerNode.outerHTML + venueContainerNode.outerHTML + locationContainerNode.outerHTML + buttonContainerNode.outerHTML;
+    tableHeaderContainerNode.innerHTML = dateTableHeaderNode.outerHTML + venueTableHeaderNode.outerHTML + locationTableHeaderNode.outerHTML+ emptyNode.outerHTML;
           
-          showsTable.appendChild(tableHeaderContainerNode);
-          showsTable.appendChild(innerContainerNode);
-          showsTable.appendChild(dividerNode);
+    showsTable.appendChild(tableHeaderContainerNode);
+    showsTable.appendChild(innerContainerNode);
+    showsTable.appendChild(dividerNode);
 
-            innerContainerNode.addEventListener("click", function(){
-                let selectedRow = document.getElementsByClassName("shows-section__inner-container--active");
-                for (let i=0;i<selectedRow.length;i++){
-                    selectedRow[i].classList.remove("shows-section__inner-container--active");
-                }
-                innerContainerNode.classList.add("shows-section__inner-container--active")
-          });
+    innerContainerNode.addEventListener("click", function(){
+        let selectedRow = document.getElementsByClassName("shows-section__inner-container--active");
+        for (let i=0;i<selectedRow.length;i++){
+            selectedRow[i].classList.remove("shows-section__inner-container--active");
         }
+        innerContainerNode.classList.add("shows-section__inner-container--active")
+    });
+    return innerContainerNode;
+}
   
-  let displayShows = ()=>{
+  let displayShows = (showsToDisplay)=>{
       let showsTable = document.querySelector('#table');
-      for (let i=0;i<shows.length;i++){
-          let showsObject = shows[i]
-          showsSection(showsObject, showsTable);
-          
-      } 
-  }
+      showsToDisplay.forEach(showToDisplay=>{
+          showsTable.appendChild(showsSection(showToDisplay, showsTable))
+      })
+}
   
-  displayShows();
+
 
 
 

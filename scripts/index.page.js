@@ -2,22 +2,22 @@ const itemForm = document.getElementById('itemForm');
 const dynamicContent = document.getElementById('comments-list');
 
 //get request 
-function getRequestFunction(){
+function getCommentsFromServer(){
     axios.get('https://project-1-api.herokuapp.com/comments?api_key=037ccb3f-b3ad-450d-b10c-5c8d2ebdab07')
     .then((result) =>{
         const commentsFromServer = result.data;
-        console.log(commentsFromServer.sort(function(x, y){
-            return y.timestamp - x.timestamp;}))
-        displayComment(commentsFromServer)
+        console.log(commentsFromServer.sort(function(a, b){
+            return b.timestamp - a.timestamp;}))
+        showAllComments(commentsFromServer)
     })
     .catch(error =>{
         console.log(error);
     });
 }
 
-getRequestFunction();
+getCommentsFromServer();
 
-let displayComment = (commentsToDisplay)=>{
+let showAllComments = (commentsToDisplay)=>{
     let displayContainer = document.querySelector('#comments-list'); 
     displayContainer.innerHTML = '';
     let dividerNode = document.createElement('div');
@@ -25,7 +25,7 @@ let displayComment = (commentsToDisplay)=>{
     displayContainer.appendChild(dividerNode);
 
     commentsToDisplay.forEach(commentToDisplay => {
-        displayContainer.appendChild(addComment(commentToDisplay));    
+        displayContainer.appendChild(displayComment(commentToDisplay));    
     }); 
 }
 
@@ -65,14 +65,14 @@ itemForm.addEventListener('submit', function (event){
         "comment": userInput.comment
     })
     .then((result) => {
-        getRequestFunction()
+        getCommentsFromServer()
     })
     .catch(error => {
         console.log(error);
     })
 });
 
-let addComment=(commentToAdd)=>{
+let displayComment=(commentToAdd)=>{
     let dividerNode = document.createElement('div');
     dividerNode.classList.add("comment-section__divider");
     let outerContainerNode = document.createElement('div');
@@ -95,10 +95,10 @@ let addComment=(commentToAdd)=>{
     commentNode.classList.add("comment-section__comment");
     nameNode.innerText = commentToAdd.name;
 
-    let timeStampVariable = timeStampNode.innerText = new Date(commentToAdd.timestamp)
-    let month = timeStampVariable.getMonth()+1 
-    let day = timeStampVariable.getDate();
-    let year = timeStampVariable.getFullYear();
+    let timestampToDate = timeStampNode.innerText = new Date(commentToAdd.timestamp)
+    let month = timestampToDate.getMonth()+1 
+    let day = timestampToDate.getDate();
+    let year = timestampToDate.getFullYear();
   
     if(day<10){
         day='0'+day
@@ -108,8 +108,8 @@ let addComment=(commentToAdd)=>{
         month = '0' + month;
     };
   
-    timeStampVariable = month + '/' + day + '/' + year;
-    timeStampNode.innerText = timeStampVariable
+    timestampToDate = month + '/' + day + '/' + year;
+    timeStampNode.innerText = timestampToDate
 
     commentNode.innerText = commentToAdd.comment;
     avatarContainerNode.innerHTML = avatarNode.outerHTML;
