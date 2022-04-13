@@ -44,25 +44,15 @@ itemForm.addEventListener('submit', function (event){
         timestamp: new Date(),
         comment:commentInputVal,
     }
-    let month = userInput.timestamp.getMonth() +1;
-    let day = userInput.timestamp.getDate();
-    let year = userInput.timestamp.getFullYear();
-  
-    if(day<10){
-        day='0'+day
-    };
-
-    if(month<10){
-        month = '0' + month;
-    };
-  
-    userInput.timestamp = month + '/' + day + '/' + year;
 
 //post request 
 
     axios.post('https://project-1-api.herokuapp.com/comments?api_key=037ccb3f-b3ad-450d-b10c-5c8d2ebdab07',{
         "name": userInput.name,
         "comment": userInput.comment
+    },
+    {   'Content-Type':'application/json'
+
     })
     .then((result) => {
         getCommentsFromServer()
@@ -93,6 +83,7 @@ let displayComment=(commentToAdd)=>{
     timeStampNode.classList.add("comment-section__timestamp");
     let commentNode = document.createElement('li');
     commentNode.classList.add("comment-section__comment");
+    
     nameNode.innerText = commentToAdd.name;
 
     let timestampToDate = timeStampNode.innerText = new Date(commentToAdd.timestamp)

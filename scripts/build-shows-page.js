@@ -5,14 +5,14 @@ axios.get('https://project-1-api.herokuapp.com/showdates?api_key=037ccb3f-b3ad-4
     .then((result) =>{
         const showsFromServer = result.data;
         console.log(showsFromServer)
-        displayShows(showsFromServer)
+        showAllShows(showsFromServer)
     })
     .catch(error =>{
         console.log(error);
     });
 
     
-let showsSection=(showsObject, showsTable)=>{
+let displayShow=(showDetails, showsTable)=>{
       
     let dividerNode = document.createElement('div');
     dividerNode.classList.add("shows-section__divider");
@@ -25,7 +25,6 @@ let showsSection=(showsObject, showsTable)=>{
     dateHeaderNode.classList.add("shows-section__mobile-header");
     let dateNode = document.createElement ('div');
     dateNode.classList.add("shows-section__text--date");
-
 
     let venueContainerNode = document.createElement('div');
     venueContainerNode.classList.add("shows-section__column-container");
@@ -61,8 +60,8 @@ let showsSection=(showsObject, showsTable)=>{
 
     dateHeaderNode.innerText = "DATE";
     
-    let unixTimestamp = showsObject.date;
-    let standardDateFormat = new Date(unixTimestamp*1);
+    let unixTimestamp = showDetails.date;
+    let standardDateFormat = new Date(parseInt(unixTimestamp));
     let dayOfTheWeek=standardDateFormat.toLocaleString("en-US", { weekday: "short"});
     let year = standardDateFormat.toLocaleString("en-US", { year: "numeric"});
     let month = standardDateFormat.toLocaleString("en-US", { month: "short"});
@@ -70,14 +69,12 @@ let showsSection=(showsObject, showsTable)=>{
 
     let humanDateFormat = dayOfTheWeek + " " + month + " " + day + " " + year;
 
-    
     dateNode.innerText = humanDateFormat
 
-
     venueHeaderNode.innerText = "VENUE";
-    venueNode.innerText = showsObject.place;
+    venueNode.innerText = showDetails.place;
     locationHeaderNode.innerText= "LOCATION";
-    locationNode.innerText = showsObject.location;
+    locationNode.innerText = showDetails.location;
     emptyNode.innerText= '\u00A0';
 
     dateTableHeaderNode.innerText ="DATE";
@@ -98,19 +95,20 @@ let showsSection=(showsObject, showsTable)=>{
     showsTable.appendChild(dividerNode);
 
     innerContainerNode.addEventListener("click", function(){
-        let selectedRow = document.getElementsByClassName("shows-section__inner-container--active");
-        for (let i=0;i<selectedRow.length;i++){
-            selectedRow[i].classList.remove("shows-section__inner-container--active");
-        }
+        const selectedRow = document.getElementsByClassName("shows-section__inner-container--active");
+        const selectedRowArray = Array.from(selectedRow)
+        selectedRowArray.forEach(row=>{
+            row.classList.remove("shows-section__inner-container--active");
+        })
         innerContainerNode.classList.add("shows-section__inner-container--active")
     });
     return innerContainerNode;
 }
   
-  let displayShows = (showsToDisplay)=>{
+  let showAllShows = (showsToDisplay)=>{
       let showsTable = document.querySelector('#table');
       showsToDisplay.forEach(showToDisplay=>{
-          showsTable.appendChild(showsSection(showToDisplay, showsTable))
+          showsTable.appendChild(displayShow(showToDisplay, showsTable))
       })
 }
   
