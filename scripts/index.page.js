@@ -37,13 +37,12 @@ let showAllComments = (commentsToDisplay)=>{
 
 itemForm.addEventListener('submit', function (event){
     event.preventDefault();
+   
     const nameInputVal = event.target.nameInput.value;
     event.target.nameInput.value = '';
     const commentInputVal=event.target.commentInput.value;
     event.target.commentInput.value = '';
-   
-    
-
+  
 
     let userInput = {
         name:nameInputVal,
@@ -66,6 +65,7 @@ itemForm.addEventListener('submit', function (event){
     .catch(error => {
         console.log(error);
     })
+    itemForm.reset();
 });
 
 let displayComment=(commentToAdd)=>{
@@ -102,6 +102,7 @@ let displayComment=(commentToAdd)=>{
     let month = timestampToDate.getMonth()+1 
     let day = timestampToDate.getDate();
     let year = timestampToDate.getFullYear();
+
   
     if(day<10){
         day='0'+day
@@ -110,7 +111,7 @@ let displayComment=(commentToAdd)=>{
     if(month<10){
         month = '0' + month;
     };
-  
+
     timestampToDate = month + '/' + day + '/' + year;
     timeStampNode.innerText = timestampToDate
 
