@@ -426,6 +426,9 @@ a {
   border: 0.0625rem solid #E1E1E1;
   background-color: #E1E1E1;
 }
+.comment-section__button-container {
+  margin-bottom: 1rem;
+}
 .comment-section__field-name {
   color: #AFAFAF;
   font-size: 0.8rem;

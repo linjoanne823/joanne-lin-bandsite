@@ -48,6 +48,10 @@
         background-color:variables.$avatar;
     }
 
+    &__button-container{
+        margin-bottom:1rem;
+    }
+
     &__field-name{
         color:variables.$secondary-text;
         font-size: 0.8rem;

@@ -2,17 +2,19 @@ const itemForm = document.getElementById('itemForm');
 const dynamicContent = document.getElementById('comments-list');
 
 //get request 
-function getCommentsFromServer(){
-    axios.get('https://project-1-api.herokuapp.com/comments?api_key=037ccb3f-b3ad-450d-b10c-5c8d2ebdab07')
-    .then((result) =>{
+
+const getCommentsFromServer = async()=>{
+    
+    try{
+        const result = await axios.get('https://project-1-api.herokuapp.com/comments?api_key=037ccb3f-b3ad-450d-b10c-5c8d2ebdab07')
         const commentsFromServer = result.data;
         console.log(commentsFromServer.sort(function(a, b){
             return b.timestamp - a.timestamp;}))
         showAllComments(commentsFromServer)
-    })
-    .catch(error =>{
+    
+    }catch(error){
         console.log(error);
-    });
+    };
 }
 
 getCommentsFromServer();
@@ -39,6 +41,10 @@ itemForm.addEventListener('submit', function (event){
     event.target.nameInput.value = '';
     const commentInputVal=event.target.commentInput.value;
     event.target.commentInput.value = '';
+   
+    
+
+
     let userInput = {
         name:nameInputVal,
         timestamp: new Date(),
@@ -84,6 +90,12 @@ let displayComment=(commentToAdd)=>{
     let commentNode = document.createElement('li');
     commentNode.classList.add("comment-section__comment");
     
+    let buttonContainerNode=document.createElement('div');
+    buttonContainerNode.classList.add("comment-section__button-container")
+    let buttonNode=document.createElement('button');
+
+    buttonNode.innerText="likes = " + commentToAdd.likes
+   
     nameNode.innerText = commentToAdd.name;
 
     let timestampToDate = timeStampNode.innerText = new Date(commentToAdd.timestamp)
@@ -106,8 +118,29 @@ let displayComment=(commentToAdd)=>{
     avatarContainerNode.innerHTML = avatarNode.outerHTML;
     rowContainerNode.innerHTML= nameNode.outerHTML + timeStampNode.outerHTML
     inputContainerNode.innerHTML = rowContainerNode.outerHTML + commentNode.outerHTML;
-    innerContainerNode.innerHTML= avatarContainerNode.outerHTML + inputContainerNode.outerHTML;
-    outerContainerNode.innerHTML= innerContainerNode.outerHTML + dividerNode.outerHTML;
+    buttonContainerNode.innerHTML =  buttonNode.outerHTML
+    innerContainerNode.innerHTML= avatarContainerNode.outerHTML + inputContainerNode.outerHTML ;
+
+    outerContainerNode.appendChild(innerContainerNode)
+    outerContainerNode.appendChild(buttonContainerNode)
+    outerContainerNode.appendChild(dividerNode)
+
+    buttonContainerNode.addEventListener("click",()=>{
+        console.log(buttonNode)
+       
+        axios.put(`https://project-1-api.herokuapp.com/comments/${commentToAdd.id}/like?api_key=037ccb3f-b3ad-450d-b10c-5c8d2ebdab07`,{
+            "likes":1
+        })
+        .then((result)=>{
+            
+            getCommentsFromServer()
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+    });
+
         
     return outerContainerNode;
 }
+
