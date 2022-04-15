@@ -82,13 +82,27 @@ let displayShow=(showDetails, showsTable)=>{
     locationTableHeaderNode.innerText ="LOCATION";
           
 
-    dateContainerNode.innerHTML = dateHeaderNode.outerHTML + dateNode.outerHTML;
-    venueContainerNode.innerHTML = venueHeaderNode.outerHTML + venueNode.outerHTML;
-    locationContainerNode.innerHTML = locationHeaderNode.outerHTML + locationNode.outerHTML;
-    buttonContainerNode.innerHTML =  buttonNode.outerHTML;
+    dateContainerNode.appendChild(dateHeaderNode); 
+    dateContainerNode.appendChild(dateNode);
 
-    innerContainerNode.innerHTML = dateContainerNode.outerHTML + venueContainerNode.outerHTML + locationContainerNode.outerHTML + buttonContainerNode.outerHTML;
-    tableHeaderContainerNode.innerHTML = dateTableHeaderNode.outerHTML + venueTableHeaderNode.outerHTML + locationTableHeaderNode.outerHTML+ emptyNode.outerHTML;
+    venueContainerNode.appendChild(venueHeaderNode);
+    venueContainerNode.appendChild(venueNode);
+
+    locationContainerNode.appendChild(locationHeaderNode);
+    locationContainerNode.appendChild(locationNode);
+
+    buttonContainerNode.appendChild(buttonNode);
+
+    innerContainerNode.appendChild(dateContainerNode);
+    innerContainerNode.appendChild(venueContainerNode);
+    innerContainerNode.appendChild(locationContainerNode);
+    innerContainerNode.appendChild(buttonContainerNode);
+
+    tableHeaderContainerNode.appendChild(dateTableHeaderNode);
+    tableHeaderContainerNode.appendChild(venueTableHeaderNode);
+    tableHeaderContainerNode.appendChild(locationTableHeaderNode);
+    tableHeaderContainerNode.appendChild(emptyNode);
+
           
     showsTable.appendChild(tableHeaderContainerNode);
     showsTable.appendChild(innerContainerNode);

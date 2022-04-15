@@ -42,7 +42,33 @@ itemForm.addEventListener('submit', function (event){
     event.target.nameInput.value = '';
     const commentInputVal=event.target.commentInput.value;
     event.target.commentInput.value = '';
-  
+
+    
+    // if (nameInputVal === ""){
+        
+    //     return false
+    // }
+
+    
+
+    if(nameInputVal.length>0){
+        document.querySelector(".comment-section__field").classList.add("comment-section__field--success")
+    }
+
+    if (nameInputVal===""){
+        document.querySelector(".comment-section__field").classList.add("comment-section__field--error")
+        return false
+    } ///this only works the first time for some reason... 
+    
+    if(commentInputVal.length>0){
+        document.querySelector(".comment-section__field-block").classList.add("comment-section__field-block--success")
+    }
+
+    if (commentInputVal===""){
+        document.querySelector(".comment-section__field-block").classList.add("comment-section__field-block--error")
+        return false
+    }
+
 
     let userInput = {
         name:nameInputVal,
@@ -68,7 +94,7 @@ itemForm.addEventListener('submit', function (event){
     itemForm.reset();
 });
 
-let displayComment=(commentToAdd)=>{
+const displayComment=(commentToAdd)=>{
     let dividerNode = document.createElement('div');
     dividerNode.classList.add("comment-section__divider");
     let outerContainerNode = document.createElement('div');
@@ -92,9 +118,26 @@ let displayComment=(commentToAdd)=>{
     
     let buttonContainerNode=document.createElement('div');
     buttonContainerNode.classList.add("comment-section__button-container")
-    let buttonNode=document.createElement('button');
+    let likeButtonNode=document.createElement('button');
+    likeButtonNode.classList.add("comment-section__like-button")
+    let thumbsUpIconNode=document.createElement('i');
+    thumbsUpIconNode.classList.add("fa", "fa-thumbs-up")
+    let numberOfLikesNode=document.createElement('span');
+    numberOfLikesNode.classList.add("comment-section__like-count");
+    
+    numberOfLikesNode.innerText=commentToAdd.likes;
+   
+    
+    likeButtonNode.appendChild(thumbsUpIconNode);
+    likeButtonNode.appendChild(numberOfLikesNode);
+   
+    let deleteButtonNode=document.createElement('button');
+    deleteButtonNode.classList.add("comment-section__delete-button");
+    let deleteIconNode=document.createElement('i');
+    deleteIconNode.classList.add("fa","fa-trash")
 
-    buttonNode.innerText="likes = " + commentToAdd.likes
+    deleteButtonNode.appendChild(deleteIconNode);
+
    
     nameNode.innerText = commentToAdd.name;
 
@@ -116,18 +159,23 @@ let displayComment=(commentToAdd)=>{
     timeStampNode.innerText = timestampToDate
 
     commentNode.innerText = commentToAdd.comment;
-    avatarContainerNode.innerHTML = avatarNode.outerHTML;
-    rowContainerNode.innerHTML= nameNode.outerHTML + timeStampNode.outerHTML
-    inputContainerNode.innerHTML = rowContainerNode.outerHTML + commentNode.outerHTML;
-    buttonContainerNode.innerHTML =  buttonNode.outerHTML
-    innerContainerNode.innerHTML= avatarContainerNode.outerHTML + inputContainerNode.outerHTML ;
+    avatarContainerNode.appendChild(avatarNode);
+    rowContainerNode.appendChild(nameNode);
+    rowContainerNode.appendChild(timeStampNode);
+    inputContainerNode.appendChild(rowContainerNode);
+    inputContainerNode.appendChild(commentNode);
+    buttonContainerNode.appendChild(likeButtonNode);
+    buttonContainerNode.appendChild(deleteButtonNode);
+
+    innerContainerNode.appendChild(avatarContainerNode);
+    innerContainerNode.appendChild(inputContainerNode);
 
     outerContainerNode.appendChild(innerContainerNode)
     outerContainerNode.appendChild(buttonContainerNode)
     outerContainerNode.appendChild(dividerNode)
 
-    buttonContainerNode.addEventListener("click",()=>{
-        console.log(buttonNode)
+    likeButtonNode.addEventListener("click",()=>{
+        console.log(likeButtonNode)
        
         axios.put(`https://project-1-api.herokuapp.com/comments/${commentToAdd.id}/like?api_key=037ccb3f-b3ad-450d-b10c-5c8d2ebdab07`,{
             "likes":1
@@ -140,6 +188,19 @@ let displayComment=(commentToAdd)=>{
             console.log(error)
         })
     });
+
+    deleteButtonNode.addEventListener("click",()=>{
+        axios.delete(`https://project-1-api.herokuapp.com/comments/${commentToAdd.id}?api_key=037ccb3f-b3ad-450d-b10c-5c8d2ebdab07`)
+       
+        .then((result)=>{
+            
+            getCommentsFromServer()
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+    });
+
 
         
     return outerContainerNode;

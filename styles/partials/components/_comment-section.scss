@@ -76,8 +76,11 @@
             color:variables.$primary-text-on-light;
             padding:0.5rem;
         }
-        &:invalid{
+        &--error{
             border:0.0625rem solid variables.$error-field-border;
+        }
+        &--success{
+            border:1px solid variables.$field-border;
         }
     }
 
@@ -99,8 +102,11 @@
                 color:variables.$primary-text-on-light;
                 padding: 0.5rem;
             }
-            &:invalid{
-                border:0.0625rem solid variables.$error-field-border;   
+            &--error{
+                border:0.0625rem solid variables.$error-field-border;
+            }
+            &--success{
+                border:1px solid variables.$field-border;
             }
         }  
     

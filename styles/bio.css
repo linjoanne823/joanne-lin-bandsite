@@ -459,8 +459,11 @@ a {
   color: #323232;
   padding: 0.5rem;
 }
-.comment-section__field:invalid {
+.comment-section__field--error {
   border: 0.0625rem solid #D22D2D;
+}
+.comment-section__field--success {
+  border: 1px solid #E1E1E1;
 }
 .comment-section__field-block {
   outline: none;
@@ -487,8 +490,11 @@ a {
   color: #323232;
   padding: 0.5rem;
 }
-.comment-section__field-block:invalid {
+.comment-section__field-block--error {
   border: 0.0625rem solid #D22D2D;
+}
+.comment-section__field-block--success {
+  border: 1px solid #E1E1E1;
 }
 .comment-section__name {
   font-weight: 600;
