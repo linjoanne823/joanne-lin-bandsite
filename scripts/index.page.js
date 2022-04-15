@@ -142,6 +142,7 @@ const displayComment=(commentToAdd)=>{
     nameNode.innerText = commentToAdd.name;
 
     let timestampToDate = timeStampNode.innerText = new Date(commentToAdd.timestamp)
+    let timestamp=commentToAdd.timestamp
     let month = timestampToDate.getMonth()+1 
     let day = timestampToDate.getDate();
     let year = timestampToDate.getFullYear();
@@ -155,8 +156,32 @@ const displayComment=(commentToAdd)=>{
         month = '0' + month;
     };
 
+    let periods = {
+        day: 24 * 60 * 60 * 1000,
+        hour: 60 * 60 * 1000,
+        minute: 60 * 1000
+      };
+      
+      function dynamicTimestamp(timestamp) {
+        var timeElapsed = Date.now() - timestamp;
+        if (timeElapsed > periods.day * 30) {
+          return timestampToDate;
+        } else if (timeElapsed > periods.day * 7) {
+          return timestampToDate;
+        } else if (timeElapsed > periods.day) {
+          return Math.floor(timeElapsed/ periods.day) + "days ago";
+        } else if (timeElapsed > periods.hour) {
+          return Math.floor(timeElapsed / periods.hour) + "hours ago";
+        } else if (timeElapsed > periods.minute) {
+          return Math.floor(timeElapsed/ periods.minute) + "minutes ago";
+        }
+        return "Just now";
+      }
+     
+    dynamicTimestamp(timestamp);
+
     timestampToDate = month + '/' + day + '/' + year;
-    timeStampNode.innerText = timestampToDate
+    timeStampNode.innerText = dynamicTimestamp(timestamp)
 
     commentNode.innerText = commentToAdd.comment;
     avatarContainerNode.appendChild(avatarNode);
