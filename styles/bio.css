@@ -515,15 +515,19 @@ a {
   border: 0.0625rem solid #E1E1E1;
   margin-bottom: 1rem;
 }
-.comment-section__button {
+.comment-section__submit-button {
   background-color: #323232;
   color: #FFFFFF;
   height: 40px;
   width: 100%;
   border-radius: 0.25rem;
 }
-.comment-section__button:hover {
+.comment-section__submit-button:hover {
   background-color: #000000;
+}
+.comment-section__button {
+  border: transparent;
+  background-color: transparent;
 }
 @media screen and (min-width: 768px) {
   .comment-section__title {
@@ -563,7 +567,7 @@ a {
     width: 3rem;
     height: 3rem;
   }
-  .comment-section__button {
+  .comment-section__submit-button {
     width: 30%;
     position: relative;
     left: 22.5rem;

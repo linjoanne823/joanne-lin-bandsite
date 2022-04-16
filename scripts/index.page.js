@@ -119,7 +119,7 @@ const displayComment=(commentToAdd)=>{
     let buttonContainerNode=document.createElement('div');
     buttonContainerNode.classList.add("comment-section__button-container")
     let likeButtonNode=document.createElement('button');
-    likeButtonNode.classList.add("comment-section__like-button")
+    likeButtonNode.classList.add("comment-section__button")
     let thumbsUpIconNode=document.createElement('i');
     thumbsUpIconNode.classList.add("fa", "fa-thumbs-up")
     let numberOfLikesNode=document.createElement('span');
@@ -132,7 +132,7 @@ const displayComment=(commentToAdd)=>{
     likeButtonNode.appendChild(numberOfLikesNode);
    
     let deleteButtonNode=document.createElement('button');
-    deleteButtonNode.classList.add("comment-section__delete-button");
+    deleteButtonNode.classList.add("comment-section__button");
     let deleteIconNode=document.createElement('i');
     deleteIconNode.classList.add("fa","fa-trash")
 

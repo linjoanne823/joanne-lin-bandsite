@@ -134,7 +134,7 @@
         
         margin-bottom:1rem;
     }
-    &__button{
+    &__submit-button{
         background-color: variables.$primary-background;
         color:variables.$primary-text;
         height:40px;
@@ -144,6 +144,11 @@
         &:hover{
             background-color:variables.$hover-button-background;
         }
+    }
+
+    &__button{
+        border:transparent;
+        background-color:transparent;
     }
 
     @include tablet{
@@ -194,7 +199,7 @@
             width:3rem;
             height:3rem;
         }
-        &__button{
+        &__submit-button{
             width:30%;
             position:relative;
             left:22.5rem;

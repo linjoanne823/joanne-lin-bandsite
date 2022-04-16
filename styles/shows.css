@@ -408,6 +408,9 @@ iframe {
   .shows-section__button {
     width: 70%;
   }
+  .shows-section__inner-container {
+    max-width: 50rem;
+  }
 }
 
 #table {

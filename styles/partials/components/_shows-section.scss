@@ -34,6 +34,7 @@
         align-items:space-between;
         flex:1 1 0;
     }
+   
 
     &__mobile-header{
         padding-top: 1rem;
@@ -194,9 +195,9 @@
             width:70%;
         }
 
-        // &__divider{
-        //     width:95%;
-        // }
+        &__inner-container{
+            max-width:50rem
+        }
     }
     
 }
