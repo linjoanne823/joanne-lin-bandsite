@@ -14,10 +14,11 @@ axios.get('https://project-1-api.herokuapp.com/showdates?api_key=037ccb3f-b3ad-4
     
 let displayShow=(showDetails, showsTable)=>{
       
-    let dividerNode = document.createElement('div');
-    dividerNode.classList.add("shows-section__divider");
+    
     let innerContainerNode = document.createElement('div');
     innerContainerNode.classList.add("shows-section__inner-container");
+    let dividerNode = document.createElement('div');
+    dividerNode.classList.add("shows-section__divider");
 
     let dateContainerNode = document.createElement('div');
     dateContainerNode.classList.add("shows-section__column-container");
@@ -97,17 +98,16 @@ let displayShow=(showDetails, showsTable)=>{
     innerContainerNode.appendChild(venueContainerNode);
     innerContainerNode.appendChild(locationContainerNode);
     innerContainerNode.appendChild(buttonContainerNode);
+    
 
     tableHeaderContainerNode.appendChild(dateTableHeaderNode);
     tableHeaderContainerNode.appendChild(venueTableHeaderNode);
     tableHeaderContainerNode.appendChild(locationTableHeaderNode);
     tableHeaderContainerNode.appendChild(emptyNode);
 
-          
     showsTable.appendChild(tableHeaderContainerNode);
     showsTable.appendChild(innerContainerNode);
-    showsTable.appendChild(dividerNode);
-
+    
     innerContainerNode.addEventListener("click", function(){
         const selectedRow = document.getElementsByClassName("shows-section__inner-container--active");
         const selectedRowArray = Array.from(selectedRow)
@@ -117,6 +117,7 @@ let displayShow=(showDetails, showsTable)=>{
         innerContainerNode.classList.add("shows-section__inner-container--active")
     });
     return innerContainerNode;
+    
 }
   
   let showAllShows = (showsToDisplay)=>{
@@ -125,11 +126,3 @@ let displayShow=(showDetails, showsTable)=>{
           showsTable.appendChild(displayShow(showToDisplay, showsTable))
       })
 }
-  
-
-
-
-
-
-
- 

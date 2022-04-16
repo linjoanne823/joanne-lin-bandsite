@@ -9,7 +9,7 @@
          background-repeat:no-repeat;
          background-position-y:30%;
      }  
-     
+    
     &__song-container{
         padding:1rem;
     }
@@ -86,4 +86,8 @@
             width:31.25rem;
         }
     }
+}
+
+iframe{
+    width:100%
 }

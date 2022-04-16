@@ -156,7 +156,7 @@ const displayComment=(commentToAdd)=>{
         month = '0' + month;
     };
 
-    let periods = {
+    let timespan = {
         day: 24 * 60 * 60 * 1000,
         hour: 60 * 60 * 1000,
         minute: 60 * 1000
@@ -164,16 +164,16 @@ const displayComment=(commentToAdd)=>{
       
       function dynamicTimestamp(timestamp) {
         var timeElapsed = Date.now() - timestamp;
-        if (timeElapsed > periods.day * 30) {
+        if (timeElapsed > timespan.day * 30) {
           return timestampToDate;
-        } else if (timeElapsed > periods.day * 7) {
+        } else if (timeElapsed > timespan.day * 7) {
           return timestampToDate;
-        } else if (timeElapsed > periods.day) {
-          return Math.floor(timeElapsed/ periods.day) + "days ago";
-        } else if (timeElapsed > periods.hour) {
-          return Math.floor(timeElapsed / periods.hour) + "hours ago";
-        } else if (timeElapsed > periods.minute) {
-          return Math.floor(timeElapsed/ periods.minute) + "minutes ago";
+        } else if (timeElapsed > timespan.day) {
+          return Math.floor(timeElapsed/ timespan.day) + "days ago";
+        } else if (timeElapsed > timespan.hour) {
+          return Math.floor(timeElapsed / timespan.hour) + "hours ago";
+        } else if (timeElapsed > timespan.minute) {
+          return Math.floor(timeElapsed/ timespan.minute) + "minutes ago";
         }
         return "Just now";
       }
