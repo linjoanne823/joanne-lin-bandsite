@@ -3,26 +3,23 @@ const dynamicContent = document.getElementById('comments-list');
 
 //get request 
 
-let getCommentsFromServer = ()=>{
-    
-     axios.get('https://project-1-api.herokuapp.com/comments?api_key=037ccb3f-b3ad-450d-b10c-5c8d2ebdab07')
-    .then(result=>{
+const getCommentsFromServer = async()=>{
+    try{
+        const result =await axios.get('https://project-1-api.herokuapp.com/comments?api_key=037ccb3f-b3ad-450d-b10c-5c8d2ebdab07')
         const commentsFromServer = result.data;
         console.log(commentsFromServer.sort(function(a, b){
-        return b.timestamp - a.timestamp;}))
+            return b.timestamp - a.timestamp;}))
         showAllComments(commentsFromServer)
-        
-    }).catch(error=>{
-        console.log(error)
-    })
-}
+    }catch(error){
+       console.log(error)
+   }}
 
 getCommentsFromServer();
 
-let showAllComments = (commentsToDisplay)=>{
-    let displayContainer = document.querySelector('#comments-list'); 
+const showAllComments = (commentsToDisplay)=>{
+    const displayContainer = document.querySelector('#comments-list'); 
     displayContainer.innerHTML = '';
-    let dividerNode = document.createElement('div');
+    const dividerNode = document.createElement('div');
     dividerNode.classList.add("comment-section__divider");
     displayContainer.appendChild(dividerNode);
 
@@ -31,10 +28,8 @@ let showAllComments = (commentsToDisplay)=>{
     }); 
 }
 
-
 //this is the HTML form. userInput is the new comment/user input 
-
-itemForm.addEventListener('submit', function (event){
+itemForm.addEventListener('submit', async(event)=>{
     event.preventDefault();
    
     const nameInputVal = event.target.nameInput.value;
@@ -42,60 +37,54 @@ itemForm.addEventListener('submit', function (event){
     const commentInputVal=event.target.commentInput.value;
     event.target.commentInput.value = '';
 
-    let userInput = {
+    const userInput = {
         name:nameInputVal,
         timestamp: new Date(),
         comment:commentInputVal,
     }
 
-//post request 
-
-    axios.post('https://project-1-api.herokuapp.com/comments?api_key=037ccb3f-b3ad-450d-b10c-5c8d2ebdab07',{
-        "name": userInput.name,
-        "comment": userInput.comment
-    },
-    {   'Content-Type':'application/json'
-
-    })
-    .then((result) => {
+    try{
+        const result = await axios.post ('https://project-1-api.herokuapp.com/comments?api_key=037ccb3f-b3ad-450d-b10c-5c8d2ebdab07',{
+            "name": userInput.name,
+            "comment": userInput.comment
+        },
+        {   'Content-Type':'application/json'
+        })
         getCommentsFromServer()
-    })
-    .catch(error => {
-        console.log(error);
-    })
-    itemForm.reset();
-});
-
+    }catch(error){
+            console.log(error)
+    }
+})
 
 const displayComment=(commentToAdd)=>{
-    let dividerNode = document.createElement('div');
+    const dividerNode = document.createElement('div');
     dividerNode.classList.add("comment-section__divider");
-    let outerContainerNode = document.createElement('div');
+    const outerContainerNode = document.createElement('div');
     outerContainerNode.classList.add("comment-section__outer-container");
-    let innerContainerNode = document.createElement('div');
+    const innerContainerNode = document.createElement('div');
     innerContainerNode.classList.add("comment-section__inner-container");
-    let avatarContainerNode = document.createElement('div');
+    const avatarContainerNode = document.createElement('div');
     avatarContainerNode.classList.add("comment-section__avatar-container--previous");
-    let avatarNode = document.createElement('div');
+    const avatarNode = document.createElement('div');
     avatarNode.classList.add("comment-section__avatar");
-    let inputContainerNode = document.createElement('div');
+    const inputContainerNode = document.createElement('div');
     inputContainerNode.classList.add("comment-section__input-container");
-    let rowContainerNode=document.createElement('div');
+    const rowContainerNode=document.createElement('div');
     rowContainerNode.classList.add("comment-section__row-container");
-    let nameNode = document.createElement ('span');
+    const nameNode = document.createElement ('span');
     nameNode.classList.add("comment-section__name");
-    let timeStampNode = document.createElement ('span');
+    const timeStampNode = document.createElement ('span');
     timeStampNode.classList.add("comment-section__timestamp");
-    let commentNode = document.createElement('li');
+    const commentNode = document.createElement('li');
     commentNode.classList.add("comment-section__comment");
     
-    let buttonContainerNode=document.createElement('div');
+    const buttonContainerNode=document.createElement('div');
     buttonContainerNode.classList.add("comment-section__button-container")
-    let likeButtonNode=document.createElement('button');
+    const likeButtonNode=document.createElement('button');
     likeButtonNode.classList.add("comment-section__button")
-    let thumbsUpIconNode=document.createElement('i');
+    const thumbsUpIconNode=document.createElement('i');
     thumbsUpIconNode.classList.add("fa", "fa-thumbs-up")
-    let numberOfLikesNode=document.createElement('span');
+    const numberOfLikesNode=document.createElement('span');
     numberOfLikesNode.classList.add("comment-section__like-count");
     
     numberOfLikesNode.innerText=commentToAdd.likes;
@@ -104,9 +93,9 @@ const displayComment=(commentToAdd)=>{
     likeButtonNode.appendChild(thumbsUpIconNode);
     likeButtonNode.appendChild(numberOfLikesNode);
    
-    let deleteButtonNode=document.createElement('button');
+    const deleteButtonNode=document.createElement('button');
     deleteButtonNode.classList.add("comment-section__button");
-    let deleteIconNode=document.createElement('i');
+    const deleteIconNode=document.createElement('i');
     deleteIconNode.classList.add("fa","fa-trash")
 
     deleteButtonNode.appendChild(deleteIconNode);
@@ -115,10 +104,10 @@ const displayComment=(commentToAdd)=>{
     nameNode.innerText = commentToAdd.name;
 
     let timestampToDate = timeStampNode.innerText = new Date(commentToAdd.timestamp)
-    let timestamp=commentToAdd.timestamp
+    const timestamp=commentToAdd.timestamp
     let month = timestampToDate.getMonth()+1 
     let day = timestampToDate.getDate();
-    let year = timestampToDate.getFullYear();
+    const year = timestampToDate.getFullYear();
 
   
     if(day<10){
@@ -129,7 +118,7 @@ const displayComment=(commentToAdd)=>{
         month = '0' + month;
     };
 
-    let timespan = {
+    const timespan = {
         day: 24 * 60 * 60 * 1000,
         hour: 60 * 60 * 1000,
         minute: 60 * 1000
@@ -172,35 +161,27 @@ const displayComment=(commentToAdd)=>{
     outerContainerNode.appendChild(buttonContainerNode)
     outerContainerNode.appendChild(dividerNode)
 
-    likeButtonNode.addEventListener("click",()=>{
+    likeButtonNode.addEventListener("click",async()=>{
         console.log(likeButtonNode)
        
-        axios.put(`https://project-1-api.herokuapp.com/comments/${commentToAdd.id}/like?api_key=037ccb3f-b3ad-450d-b10c-5c8d2ebdab07`,{
+        try {
+            const result = await axios.put(`https://project-1-api.herokuapp.com/comments/${commentToAdd.id}/like?api_key=037ccb3f-b3ad-450d-b10c-5c8d2ebdab07`,{
             "likes":1
         })
-        .then((result)=>{
-            
             getCommentsFromServer()
-        })
-        .catch(error=>{
+        }catch(error){
             console.log(error)
-        })
+        }
     });
 
-    deleteButtonNode.addEventListener("click",()=>{
-        axios.delete(`https://project-1-api.herokuapp.com/comments/${commentToAdd.id}?api_key=037ccb3f-b3ad-450d-b10c-5c8d2ebdab07`)
-       
-        .then((result)=>{
-            
+    deleteButtonNode.addEventListener("click",async()=>{
+        try{
+            const result = await axios.delete(`https://project-1-api.herokuapp.com/comments/${commentToAdd.id}?api_key=037ccb3f-b3ad-450d-b10c-5c8d2ebdab07`)
             getCommentsFromServer()
-        })
-        .catch(error=>{
+        }catch(error){
             console.log(error)
-        })
-    });
-
-
-        
+        }
+    });  
     return outerContainerNode;
 }
 
