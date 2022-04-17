@@ -34,7 +34,6 @@ let showAllComments = (commentsToDisplay)=>{
 
 //this is the HTML form. userInput is the new comment/user input 
 
-
 itemForm.addEventListener('submit', function (event){
     event.preventDefault();
    
@@ -42,33 +41,6 @@ itemForm.addEventListener('submit', function (event){
     event.target.nameInput.value = '';
     const commentInputVal=event.target.commentInput.value;
     event.target.commentInput.value = '';
-
-    
-    // if (nameInputVal === ""){
-        
-    //     return false
-    // }
-
-    
-
-    if(nameInputVal.length>0){
-        document.querySelector(".comment-section__field").classList.add("comment-section__field--success")
-    }
-
-    if (nameInputVal===""){
-        document.querySelector(".comment-section__field").classList.add("comment-section__field--error")
-        return false
-    } ///this only works the first time for some reason... 
-    
-    if(commentInputVal.length>0){
-        document.querySelector(".comment-section__field-block").classList.add("comment-section__field-block--success")
-    }
-
-    if (commentInputVal===""){
-        document.querySelector(".comment-section__field-block").classList.add("comment-section__field-block--error")
-        return false
-    }
-
 
     let userInput = {
         name:nameInputVal,
@@ -93,6 +65,7 @@ itemForm.addEventListener('submit', function (event){
     })
     itemForm.reset();
 });
+
 
 const displayComment=(commentToAdd)=>{
     let dividerNode = document.createElement('div');
