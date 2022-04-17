@@ -3,18 +3,18 @@ const dynamicContent = document.getElementById('comments-list');
 
 //get request 
 
-const getCommentsFromServer = async()=>{
+let getCommentsFromServer = ()=>{
     
-    try{
-        const result = await axios.get('https://project-1-api.herokuapp.com/comments?api_key=037ccb3f-b3ad-450d-b10c-5c8d2ebdab07')
+     axios.get('https://project-1-api.herokuapp.com/comments?api_key=037ccb3f-b3ad-450d-b10c-5c8d2ebdab07')
+    .then(result=>{
         const commentsFromServer = result.data;
         console.log(commentsFromServer.sort(function(a, b){
-            return b.timestamp - a.timestamp;}))
+        return b.timestamp - a.timestamp;}))
         showAllComments(commentsFromServer)
-    
-    }catch(error){
-        console.log(error);
-    };
+        
+    }).catch(error=>{
+        console.log(error)
+    })
 }
 
 getCommentsFromServer();

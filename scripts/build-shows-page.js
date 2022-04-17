@@ -63,10 +63,13 @@ let displayShow=(showDetails, showsTable)=>{
     
     let unixTimestamp = showDetails.date;
     let standardDateFormat = new Date(parseInt(unixTimestamp));
-    let dayOfTheWeek=standardDateFormat.toLocaleString("en-US", { weekday: "short"});
-    let year = standardDateFormat.toLocaleString("en-US", { year: "numeric"});
-    let month = standardDateFormat.toLocaleString("en-US", { month: "short"});
-    let day = standardDateFormat.toLocaleString("en-US", { day: "numeric"});
+    let days = ['Sun','Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    let dayOfTheWeek=days[standardDateFormat.getDay()];
+    let months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    let month=months[standardDateFormat.getMonth()];
+    let day = standardDateFormat.getDate();
+    let year = standardDateFormat.getFullYear();
+
 
     let humanDateFormat = dayOfTheWeek + " " + month + " " + day + " " + year;
 
